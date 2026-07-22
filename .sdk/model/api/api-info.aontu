@@ -1,0 +1,25 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      auth: false
+      contact: {
+        url: "https://dbdaas.rajathjaiprakash.com/help"
+      }
+      description: "This API provides a variety of random rejection and acceptance reasons, offering a creative and sometimes humorous take on the responses one might receive. Users can easily access specific reasons through various endpoints, making it a fun tool for generating feedback."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://dbdaas.rajathjaiprakash.com"
+        }
+      ]
+      summary: "This API provides a variety of random rejection and acceptance reasons, offering a creative and sometimes humorous take on the responses one might receive."
+      title: "Rejection Reason Generator"
+      version: "1.0.0"
+      website: "https://dbdaas.rajathjaiprakash.com"
+    }
+  }
+}
+

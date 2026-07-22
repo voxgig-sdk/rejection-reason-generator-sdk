@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "yes": {
+      "YES00": {
+        "reason": "s14",
+        "type": "s15",
+        "id": "YES00"
+      },
+      "YES01": {
+        "reason": "s28",
+        "type": "s29",
+        "id": "YES01"
+      },
+      "YES02": {
+        "reason": "s3c",
+        "type": "s3d",
+        "id": "YES02"
+      }
+    }
+  },
+  "new": {
+    "yes": {
+      "yes_ref01": {
+        "reason": "s50",
+        "type": "s51"
+      }
+    }
+  }
+}

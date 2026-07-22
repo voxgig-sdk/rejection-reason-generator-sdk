@@ -1,0 +1,429 @@
+# RejectionReasonGenerator Lua SDK Reference
+
+Complete API reference for the RejectionReasonGenerator Lua SDK.
+
+
+## RejectionReasonGeneratorSDK
+
+### Constructor
+
+```lua
+local sdk = require("rejection-reason-generator_sdk")
+local client = sdk.new(options)
+```
+
+Create a new SDK client instance.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `options` | `table` | SDK configuration options. |
+| `options.base` | `string` | Base URL for API requests. |
+| `options.prefix` | `string` | URL prefix appended after base. |
+| `options.suffix` | `string` | URL suffix appended after path. |
+| `options.headers` | `table` | Custom headers for all requests. |
+| `options.feature` | `table` | Feature configuration. |
+| `options.system` | `table` | System overrides (e.g. custom fetch). |
+
+
+### Static Methods
+
+#### `sdk.test(testopts?, sdkopts?)`
+
+Create a test client with mock features active. Both arguments are optional.
+
+```lua
+local client = sdk.test()
+```
+
+
+### Instance Methods
+
+#### `GetRandomRejection(data)`
+
+Create a new `GetRandomRejection` entity instance. Pass `nil` for no initial data.
+
+#### `Health(data)`
+
+Create a new `Health` entity instance. Pass `nil` for no initial data.
+
+#### `Help(data)`
+
+Create a new `Help` entity instance. Pass `nil` for no initial data.
+
+#### `Non(data)`
+
+Create a new `Non` entity instance. Pass `nil` for no initial data.
+
+#### `Random(data)`
+
+Create a new `Random` entity instance. Pass `nil` for no initial data.
+
+#### `Yes(data)`
+
+Create a new `Yes` entity instance. Pass `nil` for no initial data.
+
+#### `options_map() -> table`
+
+Return a deep copy of the current SDK options.
+
+#### `get_utility() -> Utility`
+
+Return a copy of the SDK utility object.
+
+#### `direct(fetchargs) -> table, err`
+
+Make a direct HTTP request to any API endpoint.
+
+**Parameters:**
+
+| Name | Type | Description |
+| --- | --- | --- |
+| `fetchargs.path` | `string` | URL path with optional `{param}` placeholders. |
+| `fetchargs.method` | `string` | HTTP method (default: `"GET"`). |
+| `fetchargs.params` | `table` | Path parameter values for `{param}` substitution. |
+| `fetchargs.query` | `table` | Query string parameters. |
+| `fetchargs.headers` | `table` | Request headers (merged with defaults). |
+| `fetchargs.body` | `any` | Request body (tables are JSON-serialized). |
+| `fetchargs.ctrl` | `table` | Control options (e.g. `{ explain = true }`). |
+
+**Returns:** `table, err`
+
+#### `prepare(fetchargs) -> table, err`
+
+Prepare a fetch definition without sending the request. Accepts the
+same parameters as `direct()`.
+
+**Returns:** `table, err`
+
+
+---
+
+## GetRandomRejectionEntity
+
+```lua
+local get_random_rejection = client:GetRandomRejection(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `reason` | `string` | No |  |
+| `type` | `string` | No |  |
+
+### Operations
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:GetRandomRejection():load()
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `GetRandomRejectionEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## HealthEntity
+
+```lua
+local health = client:Health(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `status` | `string` | No |  |
+
+### Operations
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:Health():load()
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `HealthEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## HelpEntity
+
+```lua
+local help = client:Help(nil)
+```
+
+### Operations
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:Help():load()
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `HelpEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## NonEntity
+
+```lua
+local non = client:Non(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `reason` | `string` | No |  |
+| `type` | `string` | No |  |
+
+### Operations
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:Non():load()
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `NonEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## RandomEntity
+
+```lua
+local random = client:Random(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `reason` | `string` | No |  |
+| `type` | `string` | No |  |
+
+### Operations
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:Random():load()
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `RandomEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## YesEntity
+
+```lua
+local yes = client:Yes(nil)
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `reason` | `string` | No |  |
+| `type` | `string` | No |  |
+
+### Operations
+
+#### `load(reqmatch, ctrl) -> any, err`
+
+Load a single entity matching the given criteria.
+
+```lua
+local result, err = client:Yes():load()
+```
+
+### Common Methods
+
+#### `data_get() -> table`
+
+Get the entity data. Returns a copy of the current data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> table`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `YesEntity` instance with the same client and
+options.
+
+#### `get_name() -> string`
+
+Return the entity name.
+
+
+---
+
+## Features
+
+| Feature | Version | Description |
+| --- | --- | --- |
+| `test` | 0.0.1 | In-memory mock transport for testing without a live server |
+
+
+Features are activated via the `feature` option:
+
+```lua
+local client = sdk.new({
+  feature = {
+    test = { active = true },
+  },
+})
+```
+

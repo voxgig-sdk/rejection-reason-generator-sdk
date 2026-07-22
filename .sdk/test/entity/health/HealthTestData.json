@@ -1,0 +1,25 @@
+{
+  "existing": {
+    "health": {
+      "HEALTH00": {
+        "status": "sa",
+        "id": "HEALTH00"
+      },
+      "HEALTH01": {
+        "status": "s14",
+        "id": "HEALTH01"
+      },
+      "HEALTH02": {
+        "status": "s1e",
+        "id": "HEALTH02"
+      }
+    }
+  },
+  "new": {
+    "health": {
+      "health_ref01": {
+        "status": "s28"
+      }
+    }
+  }
+}

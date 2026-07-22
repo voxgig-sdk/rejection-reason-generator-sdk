@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "random": {
+      "RANDOM00": {
+        "reason": "s14",
+        "type": "s15",
+        "id": "RANDOM00"
+      },
+      "RANDOM01": {
+        "reason": "s28",
+        "type": "s29",
+        "id": "RANDOM01"
+      },
+      "RANDOM02": {
+        "reason": "s3c",
+        "type": "s3d",
+        "id": "RANDOM02"
+      }
+    }
+  },
+  "new": {
+    "random": {
+      "random_ref01": {
+        "reason": "s50",
+        "type": "s51"
+      }
+    }
+  }
+}

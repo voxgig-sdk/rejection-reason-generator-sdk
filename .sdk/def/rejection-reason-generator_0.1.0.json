@@ -1,0 +1,257 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Rejection Reason Generator",
+    "description": "This API provides a variety of random rejection and acceptance reasons, offering a creative and sometimes humorous take on the responses one might receive. Users can easily access specific reasons through various endpoints, making it a fun tool for generating feedback.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://dbdaas.rajathjaiprakash.com/help"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://dbdaas.rajathjaiprakash.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "summary": "Get random rejection reason",
+        "description": "Returns a random 'no' reason",
+        "operationId": "getRandomRejection",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "Response format (json or plain text)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json"
+              ],
+              "default": "text"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with a random rejection reason",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "Your request has been denied due to unforeseen circumstances."
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReasonResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/no": {
+      "get": {
+        "summary": "Get random rejection reason",
+        "description": "Returns a random 'no' reason",
+        "operationId": "getNoReason",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "Response format (json or plain text)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json"
+              ],
+              "default": "text"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with a random rejection reason",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "Unfortunately, we must decline your request at this time."
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReasonResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/yes": {
+      "get": {
+        "summary": "Get random acceptance reason",
+        "description": "Returns a random 'yes' reason",
+        "operationId": "getYesReason",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "Response format (json or plain text)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json"
+              ],
+              "default": "text"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with a random acceptance reason",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "Your request has been approved! Congratulations!"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReasonResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/random": {
+      "get": {
+        "summary": "Get random reason",
+        "description": "Returns a random 'yes' or 'no' reason",
+        "operationId": "getRandomReason",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "description": "Response format (json or plain text)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json"
+              ],
+              "default": "text"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with a random acceptance or rejection reason",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "Maybe next time!"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReasonResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Health check",
+        "description": "Returns the health status of the API",
+        "operationId": "getHealthStatus",
+        "responses": {
+          "200": {
+            "description": "Service is healthy",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string",
+                  "example": "OK"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "healthy"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/help": {
+      "get": {
+        "summary": "Get help information",
+        "description": "Returns help information about the API endpoints and usage",
+        "operationId": "getHelp",
+        "responses": {
+          "200": {
+            "description": "Help information",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/html": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ReasonResponse": {
+        "type": "object",
+        "properties": {
+          "reason": {
+            "type": "string",
+            "description": "The rejection or acceptance reason",
+            "example": "Your request has been processed successfully."
+          },
+          "type": {
+            "type": "string",
+            "description": "Type of response (yes or no)",
+            "enum": [
+              "yes",
+              "no"
+            ],
+            "example": "yes"
+          }
+        }
+      }
+    }
+  }
+}

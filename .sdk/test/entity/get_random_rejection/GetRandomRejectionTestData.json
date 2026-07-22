@@ -1,0 +1,29 @@
+{
+  "existing": {
+    "get_random_rejection": {
+      "GET_RANDOM_REJECTION00": {
+        "reason": "s14",
+        "type": "s15",
+        "id": "GET_RANDOM_REJECTION00"
+      },
+      "GET_RANDOM_REJECTION01": {
+        "reason": "s28",
+        "type": "s29",
+        "id": "GET_RANDOM_REJECTION01"
+      },
+      "GET_RANDOM_REJECTION02": {
+        "reason": "s3c",
+        "type": "s3d",
+        "id": "GET_RANDOM_REJECTION02"
+      }
+    }
+  },
+  "new": {
+    "get_random_rejection": {
+      "get_random_rejection_ref01": {
+        "reason": "s50",
+        "type": "s51"
+      }
+    }
+  }
+}
