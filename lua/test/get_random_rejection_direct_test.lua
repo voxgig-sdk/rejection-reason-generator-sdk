@@ -60,11 +60,11 @@ function get_random_rejection_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["REJECTIONREASONGENERATOR_TEST_GET_RANDOM_REJECTION_ENTID"] = {},
-    ["REJECTIONREASONGENERATOR_TEST_LIVE"] = "FALSE",
+    ["REJECTION_REASON_GENERATOR_TEST_GET_RANDOM_REJECTION_ENTID"] = {},
+    ["REJECTION_REASON_GENERATOR_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["REJECTIONREASONGENERATOR_TEST_LIVE"] == "TRUE"
+  local live = env["REJECTION_REASON_GENERATOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

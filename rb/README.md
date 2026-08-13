@@ -34,7 +34,7 @@ client = RejectionReasonGeneratorSDK.new
 
 ```ruby
 begin
-  # load returns the bare GetRandomRejection record (raises on error).
+  # load returns the ENTITY — call data_get for the GetRandomRejection record (raises on error).
   getrandomrejection = client.GetRandomRejection.load()
   puts getrandomrejection
 rescue => err
@@ -49,7 +49,7 @@ Entity operations raise on failure, so rescue them:
 
 ```ruby
 begin
-  getrandomrejection = client.GetRandomRejection.load()
+  random = client.Random.load()
 rescue => err
   warn "load failed: #{err}"
 end
@@ -117,9 +117,10 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = RejectionReasonGeneratorSDK.test
 
-# Entity ops return the bare mock record (raises on error).
-getrandomrejection = client.GetRandomRejection.load()
-puts getrandomrejection
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
+random = client.Random.load()
+puts random
 ```
 
 ### Use a custom fetch function
@@ -323,7 +324,7 @@ Create an instance: `get_random_rejection = client.GetRandomRejection`
 #### Example: Load
 
 ```ruby
-# load returns the bare GetRandomRejection record (raises on error).
+# load returns the ENTITY — call data_get for the GetRandomRejection record (raises on error).
 get_random_rejection = client.GetRandomRejection.load()
 ```
 
@@ -347,7 +348,7 @@ Create an instance: `health = client.Health`
 #### Example: Load
 
 ```ruby
-# load returns the bare Health record (raises on error).
+# load returns the ENTITY — call data_get for the Health record (raises on error).
 health = client.Health.load()
 ```
 
@@ -365,7 +366,7 @@ Create an instance: `help = client.Help`
 #### Example: Load
 
 ```ruby
-# load returns the bare Help record (raises on error).
+# load returns the ENTITY — call data_get for the Help record (raises on error).
 help = client.Help.load()
 ```
 
@@ -390,7 +391,7 @@ Create an instance: `non = client.Non`
 #### Example: Load
 
 ```ruby
-# load returns the bare Non record (raises on error).
+# load returns the ENTITY — call data_get for the Non record (raises on error).
 non = client.Non.load()
 ```
 
@@ -415,7 +416,7 @@ Create an instance: `random = client.Random`
 #### Example: Load
 
 ```ruby
-# load returns the bare Random record (raises on error).
+# load returns the ENTITY — call data_get for the Random record (raises on error).
 random = client.Random.load()
 ```
 
@@ -440,7 +441,7 @@ Create an instance: `yes = client.Yes`
 #### Example: Load
 
 ```ruby
-# load returns the bare Yes record (raises on error).
+# load returns the ENTITY — call data_get for the Yes record (raises on error).
 yes = client.Yes.load()
 ```
 
@@ -521,11 +522,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-getrandomrejection = client.GetRandomRejection
-getrandomrejection.load()
+random = client.Random
+random.load()
 
-# getrandomrejection.data_get now returns the getrandomrejection data from the last load
-# getrandomrejection.match_get returns the last match criteria
+# random.data_get now returns the random data from the last load
+# random.match_get returns the last match criteria
 ```
 
 Call `make` to create a fresh instance with the same configuration

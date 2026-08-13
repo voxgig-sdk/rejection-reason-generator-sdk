@@ -59,11 +59,11 @@ def non_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "REJECTIONREASONGENERATOR_TEST_NON_ENTID" => {},
-    "REJECTIONREASONGENERATOR_TEST_LIVE" => "FALSE",
+    "REJECTION_REASON_GENERATOR_TEST_NON_ENTID" => {},
+    "REJECTION_REASON_GENERATOR_TEST_LIVE" => "FALSE",
   })
 
-  live = env["REJECTIONREASONGENERATOR_TEST_LIVE"] == "TRUE"
+  live = env["REJECTION_REASON_GENERATOR_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

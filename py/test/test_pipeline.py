@@ -16,11 +16,11 @@
 import pytest
 
 from rejectionreasongenerator_sdk import RejectionReasonGeneratorSDK
-from core.error import RejectionReasonGeneratorError
-from core.result import RejectionReasonGeneratorResult
-from core.response import RejectionReasonGeneratorResponse
-from core.spec import RejectionReasonGeneratorSpec
-from feature.base_feature import RejectionReasonGeneratorBaseFeature
+from rejectionreasongenerator_sdk.core.error import RejectionReasonGeneratorError
+from rejectionreasongenerator_sdk.core.result import RejectionReasonGeneratorResult
+from rejectionreasongenerator_sdk.core.response import RejectionReasonGeneratorResponse
+from rejectionreasongenerator_sdk.core.spec import RejectionReasonGeneratorSpec
+from rejectionreasongenerator_sdk.feature.base_feature import RejectionReasonGeneratorBaseFeature
 
 
 def _client():

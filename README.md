@@ -38,18 +38,27 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = RejectionReasonGeneratorSDK.test()
-const getrandomrejection = await client.GetRandomRejection().load()
-// getrandomrejection is a bare GetRandomRejection populated with mock data
-console.log(getrandomrejection)
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = RejectionReasonGeneratorSDK.test({
+  entity: {
+    random: {
+      test01: { id: 'test01' },
+    },
+  },
+})
+const random = await client.Random().load()
+// random is the Random entity, populated with mock data
+// — call random.data() for the record itself
+console.log(random)
 ```
 
 ### Python
 
 ```python
 client = RejectionReasonGeneratorSDK.test()
-getrandomrejection = client.GetRandomRejection().load()
-print(getrandomrejection)
+random = client.Random().load()
+print(random)
 ```
 
 ### PHP
@@ -57,16 +66,16 @@ print(getrandomrejection)
 ```php
 // Seed fixture data so offline calls resolve without a live server.
 $client = RejectionReasonGeneratorSDK::test([
-    "entity" => ["getrandomrejection" => ["test01" => []]],
+    "entity" => ["random" => ["test01" => []]],
 ]);
-$getrandomrejection = $client->GetRandomRejection()->load();
+$random = $client->Random()->load();
 ```
 
 ### Golang
 
 ```go
 client := sdk.Test()
-result, err := client.GetRandomRejection(nil).Load(
+result, err := client.Random(nil).Load(
     nil, nil,
 )
 ```
@@ -76,16 +85,16 @@ result, err := client.GetRandomRejection(nil).Load(
 ```ruby
 # Seed fixture data so offline calls resolve without a live server.
 client = RejectionReasonGeneratorSDK.test({
-  "entity" => { "getrandomrejection" => { "test01" => {} } },
+  "entity" => { "random" => { "test01" => {} } },
 })
-getrandomrejection = client.GetRandomRejection.load()
+random = client.Random.load()
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:GetRandomRejection():load()
+local result, err = client:Random():load()
 ```
 
 ## Packages
@@ -187,7 +196,7 @@ require_once 'rejectionreasongenerator_sdk.php';
 $client = new RejectionReasonGeneratorSDK();
 
 
-// Load a specific getrandomrejection (returns the bare record; throws on error)
+// Load a specific getrandomrejection (returns the ENTITY; call data_get() for the record; throws on error)
 $getrandomrejection = $client->GetRandomRejection()->load();
 print_r($getrandomrejection);
 ```
@@ -215,7 +224,7 @@ require_relative "RejectionReasonGenerator_sdk"
 client = RejectionReasonGeneratorSDK.new
 
 
-# Load a specific getrandomrejection (returns the bare record; raises on error)
+# Load a specific getrandomrejection (returns the ENTITY; call data_get for the record)
 getrandomrejection = client.GetRandomRejection.load()
 puts getrandomrejection
 ```
@@ -349,6 +358,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://dbdaas.rajathjaiprakash.com/help](https://dbdaas.rajathjaiprakash.com/help)
 

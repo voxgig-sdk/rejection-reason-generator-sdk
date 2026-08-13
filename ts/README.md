@@ -53,8 +53,8 @@ Entity operations reject on failure, so wrap them in `try` / `catch`:
 
 ```ts
 try {
-  const getrandomrejection = await client.GetRandomRejection().load()
-  console.log(getrandomrejection)
+  const random = await client.Random().load()
+  console.log(random)
 } catch (err) {
   console.error('load failed:', err)
 }
@@ -120,9 +120,10 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = RejectionReasonGeneratorSDK.test()
 
-const getrandomrejection = await client.GetRandomRejection().load()
-// getrandomrejection is a bare entity populated with mock response data
-console.log(getrandomrejection)
+const random = await client.Random().load()
+// random is the entity, populated with mock response data
+// — call random.data() for the record itself
+console.log(random)
 ```
 
 You can also use the instance method:
@@ -137,7 +138,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.GetRandomRejection()
+const entity = client.Random()
 
 // First call runs the operation and stores its result
 await entity.load()
@@ -558,11 +559,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const getrandomrejection = client.GetRandomRejection()
-await getrandomrejection.load()
+const random = client.Random()
+await random.load()
 
-// getrandomrejection.data() now returns the getrandomrejection data from the last `load`
-// getrandomrejection.match() returns the last match criteria
+// random.data() now returns the random data from the last `load`
+// random.match() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

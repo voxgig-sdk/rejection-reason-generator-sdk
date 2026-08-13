@@ -26,8 +26,8 @@ import {
 describe('HelpEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when REJECTIONREASONGENERATOR_TEST_LIVE=TRUE.
-  afterEach(liveDelay('REJECTIONREASONGENERATOR_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when REJECTION_REASON_GENERATOR_TEST_LIVE=TRUE.
+  afterEach(liveDelay('REJECTION_REASON_GENERATOR_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = RejectionReasonGeneratorSDK.test()
@@ -62,7 +62,7 @@ describe('HelpEntity', async () => {
     // LOAD
     const help_ref01_ent = client.Help()
     const help_ref01_match_dt0: any = {}
-    const help_ref01_data_dt0 = await help_ref01_ent.load(help_ref01_match_dt0)
+    const help_ref01_data_dt0 = (await help_ref01_ent.load(help_ref01_match_dt0)).data()
     assert(null != help_ref01_data_dt0)
 
 

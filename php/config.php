@@ -71,6 +71,7 @@ class RejectionReasonGeneratorConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/',
                   'parts' => [],
@@ -112,6 +113,7 @@ class RejectionReasonGeneratorConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/health',
                   'parts' => [
@@ -143,6 +145,7 @@ class RejectionReasonGeneratorConfig
                 [
                   'active' => true,
                   'args' => [],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/help',
                   'parts' => [
@@ -201,6 +204,7 @@ class RejectionReasonGeneratorConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/no',
                   'parts' => [
@@ -263,6 +267,7 @@ class RejectionReasonGeneratorConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random',
                   'parts' => [
@@ -325,6 +330,7 @@ class RejectionReasonGeneratorConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/yes',
                   'parts' => [

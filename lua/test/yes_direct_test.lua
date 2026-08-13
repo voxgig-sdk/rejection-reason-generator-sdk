@@ -60,11 +60,11 @@ function yes_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["REJECTIONREASONGENERATOR_TEST_YES_ENTID"] = {},
-    ["REJECTIONREASONGENERATOR_TEST_LIVE"] = "FALSE",
+    ["REJECTION_REASON_GENERATOR_TEST_YES_ENTID"] = {},
+    ["REJECTION_REASON_GENERATOR_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["REJECTIONREASONGENERATOR_TEST_LIVE"] == "TRUE"
+  local live = env["REJECTION_REASON_GENERATOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

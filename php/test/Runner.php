@@ -43,8 +43,8 @@ class RejectionReasonGeneratorTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('REJECTIONREASONGENERATOR_TEST_LIVE');
-        $override = self::getenv('REJECTIONREASONGENERATOR_TEST_OVERRIDE');
+        $live = self::getenv('REJECTION_REASON_GENERATOR_TEST_LIVE');
+        $override = self::getenv('REJECTION_REASON_GENERATOR_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class RejectionReasonGeneratorTestRunner
             }
         }
 
-        $explain = self::getenv('REJECTIONREASONGENERATOR_TEST_EXPLAIN');
+        $explain = self::getenv('REJECTION_REASON_GENERATOR_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['REJECTIONREASONGENERATOR_TEST_EXPLAIN'] = $explain;
+            $m['REJECTION_REASON_GENERATOR_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

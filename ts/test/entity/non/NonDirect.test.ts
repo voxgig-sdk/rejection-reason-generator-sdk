@@ -19,11 +19,15 @@ import {
 describe('NonDirect', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when REJECTIONREASONGENERATOR_TEST_LIVE=TRUE.
-  afterEach(liveDelay('REJECTIONREASONGENERATOR_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when REJECTION_REASON_GENERATOR_TEST_LIVE=TRUE.
+  afterEach(liveDelay('REJECTION_REASON_GENERATOR_TEST_LIVE'))
 
   test('direct-exists', async () => {
     const sdk = new RejectionReasonGeneratorSDK({
+      // Concrete base: a live construction must satisfy any server
+      // variables a templated base URL declares; overriding base with a
+      // literal (as the direct flow tests do) sidesteps the requirement.
+      base: 'http://localhost:8080',
       system: { fetch: async () => ({}) }
     })
     assert('function' === typeof sdk.direct)
@@ -72,17 +76,17 @@ function directSetup(mockres?: any) {
   const calls: any[] = []
 
   const env = envOverride({
-    'REJECTIONREASONGENERATOR_TEST_NON_ENTID': {},
-    'REJECTIONREASONGENERATOR_TEST_LIVE': 'FALSE',
+    'REJECTION_REASON_GENERATOR_TEST_NON_ENTID': {},
+    'REJECTION_REASON_GENERATOR_TEST_LIVE': 'FALSE',
   })
 
-  const live = 'TRUE' === env.REJECTIONREASONGENERATOR_TEST_LIVE
+  const live = 'TRUE' === env.REJECTION_REASON_GENERATOR_TEST_LIVE
 
   if (live) {
     const client = new RejectionReasonGeneratorSDK({
     })
 
-    let idmap: any = env['REJECTIONREASONGENERATOR_TEST_NON_ENTID']
+    let idmap: any = env['REJECTION_REASON_GENERATOR_TEST_NON_ENTID']
     if ('string' === typeof idmap && idmap.startsWith('{')) {
       idmap = JSON.parse(idmap)
     }

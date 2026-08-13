@@ -66,12 +66,12 @@ Every entity operation returns `(value, error)`. Check `err` before
 using the value — there is no exception to catch:
 
 ```go
-getrandomrejection, err := client.GetRandomRejection(nil).Load(nil, nil)
+random, err := client.Random(nil).Load(nil, nil)
 if err != nil {
     // handle err
     return
 }
-_ = getrandomrejection
+_ = random
 ```
 
 `Direct` follows the same `(value, error)` convention:
@@ -135,13 +135,13 @@ Create a mock client for unit testing — no server required:
 ```go
 client := sdk.Test()
 
-getRandomRejection, err := client.GetRandomRejection(nil).Load(
+random, err := client.Random(nil).Load(
     nil, nil,
 )
 if err != nil {
     panic(err)
 }
-fmt.Println(getRandomRejection) // the returned mock data
+fmt.Println(random) // the returned mock data
 ```
 
 ### Use a custom fetch function
@@ -560,11 +560,11 @@ Entity instances are stateful. After a successful `Load`, the entity
 stores the returned data and match criteria internally.
 
 ```go
-getrandomrejection := client.GetRandomRejection(nil)
-getrandomrejection.Load(nil, nil)
+random := client.Random(nil)
+random.Load(nil, nil)
 
-// getrandomrejection.Data() now returns the getrandomrejection data from the last load
-// getrandomrejection.Match() returns the last match criteria
+// random.Data() now returns the random data from the last load
+// random.Match() returns the last match criteria
 ```
 
 Call `Make()` to create a fresh instance with the same configuration

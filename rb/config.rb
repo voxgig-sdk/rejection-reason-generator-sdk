@@ -66,6 +66,7 @@ module RejectionReasonGeneratorConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/",
                   "parts" => [],
@@ -107,6 +108,7 @@ module RejectionReasonGeneratorConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/health",
                   "parts" => [
@@ -138,6 +140,7 @@ module RejectionReasonGeneratorConfig
                 {
                   "active" => true,
                   "args" => {},
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/help",
                   "parts" => [
@@ -196,6 +199,7 @@ module RejectionReasonGeneratorConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/no",
                   "parts" => [
@@ -258,6 +262,7 @@ module RejectionReasonGeneratorConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random",
                   "parts" => [
@@ -320,6 +325,7 @@ module RejectionReasonGeneratorConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/yes",
                   "parts" => [

@@ -35,7 +35,8 @@ func TestYesDirect(t *testing.T) {
 		if setup.live {
 			// Live mode is lenient: synthetic IDs frequently 4xx. Skip
 			// rather than fail when the load endpoint isn't reachable with
-			// the IDs we can construct from setup.idmap.
+			// the IDs we can construct from setup.idmap — unless the model
+			// sets main.kit.test.live.strict.
 			if err != nil {
 				t.Skipf("load call failed (likely synthetic IDs against live API): %v", err)
 			}
@@ -97,11 +98,11 @@ func yesDirectSetup(mockres any) *yesDirectSetupResult {
 	calls := &[]map[string]any{}
 
 	env := envOverride(map[string]any{
-		"REJECTIONREASONGENERATOR_TEST_YES_ENTID": map[string]any{},
-		"REJECTIONREASONGENERATOR_TEST_LIVE":    "FALSE",
+		"REJECTION_REASON_GENERATOR_TEST_YES_ENTID": map[string]any{},
+		"REJECTION_REASON_GENERATOR_TEST_LIVE":    "FALSE",
 	})
 
-	live := env["REJECTIONREASONGENERATOR_TEST_LIVE"] == "TRUE"
+	live := env["REJECTION_REASON_GENERATOR_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
@@ -109,7 +110,7 @@ func yesDirectSetup(mockres any) *yesDirectSetupResult {
 		client := sdk.NewRejectionReasonGeneratorSDK(mergedOpts)
 
 		idmap := map[string]any{}
-		if entidRaw, ok := env["REJECTIONREASONGENERATOR_TEST_YES_ENTID"]; ok {
+		if entidRaw, ok := env["REJECTION_REASON_GENERATOR_TEST_YES_ENTID"]; ok {
 			if entidStr, ok := entidRaw.(string); ok && strings.HasPrefix(entidStr, "{") {
 				json.Unmarshal([]byte(entidStr), &idmap)
 			} else if entidMap, ok := entidRaw.(map[string]any); ok {

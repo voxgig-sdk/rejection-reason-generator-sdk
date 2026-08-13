@@ -93,7 +93,7 @@ NonLoadMatch = Struct.new(
 #
 # @!attribute [rw] type
 #   @return [String, nil]
-Random = Struct.new(
+RandomType = Struct.new(
   :reason,
   :type,
   keyword_init: true

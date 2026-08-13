@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from rejectionreasongenerator_sdk.utility.voxgig_struct import voxgig_struct as vs
 from rejectionreasongenerator_sdk import RejectionReasonGeneratorSDK
-from core import helpers
+from rejectionreasongenerator_sdk.core import helpers
 from test import runner
 
 
@@ -56,11 +56,11 @@ def _non_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "REJECTIONREASONGENERATOR_TEST_NON_ENTID": {},
-        "REJECTIONREASONGENERATOR_TEST_LIVE": "FALSE",
+        "REJECTION_REASON_GENERATOR_TEST_NON_ENTID": {},
+        "REJECTION_REASON_GENERATOR_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("REJECTIONREASONGENERATOR_TEST_LIVE") == "TRUE"
+    live = env.get("REJECTION_REASON_GENERATOR_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

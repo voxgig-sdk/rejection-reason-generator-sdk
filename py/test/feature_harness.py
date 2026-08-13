@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import RejectionReasonGeneratorControl
-from core.error import RejectionReasonGeneratorError
-from core.result import RejectionReasonGeneratorResult
-from core.spec import RejectionReasonGeneratorSpec
+from rejectionreasongenerator_sdk.config import make_config
+from rejectionreasongenerator_sdk.features import _make_feature
+from rejectionreasongenerator_sdk.core.control import RejectionReasonGeneratorControl
+from rejectionreasongenerator_sdk.core.error import RejectionReasonGeneratorError
+from rejectionreasongenerator_sdk.core.result import RejectionReasonGeneratorResult
+from rejectionreasongenerator_sdk.core.spec import RejectionReasonGeneratorSpec
 
 
 # True when this SDK was generated with the named feature.

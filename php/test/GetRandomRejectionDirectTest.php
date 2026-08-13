@@ -65,11 +65,11 @@ function get_random_rejection_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "REJECTIONREASONGENERATOR_TEST_GET_RANDOM_REJECTION_ENTID" => [],
-        "REJECTIONREASONGENERATOR_TEST_LIVE" => "FALSE",
+        "REJECTION_REASON_GENERATOR_TEST_GET_RANDOM_REJECTION_ENTID" => [],
+        "REJECTION_REASON_GENERATOR_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["REJECTIONREASONGENERATOR_TEST_LIVE"] === "TRUE";
+    $live = $env["REJECTION_REASON_GENERATOR_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

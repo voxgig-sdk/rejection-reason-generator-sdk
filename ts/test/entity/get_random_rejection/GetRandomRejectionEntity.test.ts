@@ -26,8 +26,8 @@ import {
 describe('GetRandomRejectionEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when REJECTIONREASONGENERATOR_TEST_LIVE=TRUE.
-  afterEach(liveDelay('REJECTIONREASONGENERATOR_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when REJECTION_REASON_GENERATOR_TEST_LIVE=TRUE.
+  afterEach(liveDelay('REJECTION_REASON_GENERATOR_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = RejectionReasonGeneratorSDK.test()
@@ -62,7 +62,7 @@ describe('GetRandomRejectionEntity', async () => {
     // LOAD
     const get_random_rejection_ref01_ent = client.GetRandomRejection()
     const get_random_rejection_ref01_match_dt0: any = {}
-    const get_random_rejection_ref01_data_dt0 = await get_random_rejection_ref01_ent.load(get_random_rejection_ref01_match_dt0)
+    const get_random_rejection_ref01_data_dt0 = (await get_random_rejection_ref01_ent.load(get_random_rejection_ref01_match_dt0)).data()
     assert(null != get_random_rejection_ref01_data_dt0)
 
 

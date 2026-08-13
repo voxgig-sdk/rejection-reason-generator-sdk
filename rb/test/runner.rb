@@ -23,8 +23,8 @@ module RejectionReasonGeneratorTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("REJECTIONREASONGENERATOR_TEST_LIVE")
-    override = getenv("REJECTIONREASONGENERATOR_TEST_OVERRIDE")
+    live = getenv("REJECTION_REASON_GENERATOR_TEST_LIVE")
+    override = getenv("REJECTION_REASON_GENERATOR_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module RejectionReasonGeneratorTestRunner
       end
     end
 
-    explain = getenv("REJECTIONREASONGENERATOR_TEST_EXPLAIN")
-    m["REJECTIONREASONGENERATOR_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("REJECTION_REASON_GENERATOR_TEST_EXPLAIN")
+    m["REJECTION_REASON_GENERATOR_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

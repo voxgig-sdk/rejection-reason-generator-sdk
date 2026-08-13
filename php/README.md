@@ -35,7 +35,7 @@ $client = new RejectionReasonGeneratorSDK();
 
 ```php
 try {
-    // load() returns the bare GetRandomRejection record (throws on error).
+    // load() returns the ENTITY — call data_get() for the GetRandomRejection record (throws on error).
     $getrandomrejection = $client->GetRandomRejection()->load();
     print_r($getrandomrejection);
 } catch (\Throwable $err) {
@@ -51,7 +51,7 @@ Entity operations throw a `\Throwable` on failure, so wrap them in
 
 ```php
 try {
-    $getrandomrejection = $client->GetRandomRejection()->load();
+    $random = $client->Random()->load();
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
@@ -123,9 +123,10 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = RejectionReasonGeneratorSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
-$getrandomrejection = $client->GetRandomRejection()->load();
-print_r($getrandomrejection);
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
+$random = $client->Random()->load();
+print_r($random);
 ```
 
 ### Use a custom fetch function
@@ -227,7 +228,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -333,7 +334,7 @@ Create an instance: `$get_random_rejection = $client->GetRandomRejection();`
 #### Example: Load
 
 ```php
-// load() returns the bare GetRandomRejection record (throws on error).
+// load() returns the ENTITY — call data_get() for the GetRandomRejection record (throws on error).
 $get_random_rejection = $client->GetRandomRejection()->load();
 ```
 
@@ -357,7 +358,7 @@ Create an instance: `$health = $client->Health();`
 #### Example: Load
 
 ```php
-// load() returns the bare Health record (throws on error).
+// load() returns the ENTITY — call data_get() for the Health record (throws on error).
 $health = $client->Health()->load();
 ```
 
@@ -375,7 +376,7 @@ Create an instance: `$help = $client->Help();`
 #### Example: Load
 
 ```php
-// load() returns the bare Help record (throws on error).
+// load() returns the ENTITY — call data_get() for the Help record (throws on error).
 $help = $client->Help()->load();
 ```
 
@@ -400,7 +401,7 @@ Create an instance: `$non = $client->Non();`
 #### Example: Load
 
 ```php
-// load() returns the bare Non record (throws on error).
+// load() returns the ENTITY — call data_get() for the Non record (throws on error).
 $non = $client->Non()->load();
 ```
 
@@ -425,7 +426,7 @@ Create an instance: `$random = $client->Random();`
 #### Example: Load
 
 ```php
-// load() returns the bare Random record (throws on error).
+// load() returns the ENTITY — call data_get() for the Random record (throws on error).
 $random = $client->Random()->load();
 ```
 
@@ -450,7 +451,7 @@ Create an instance: `$yes = $client->Yes();`
 #### Example: Load
 
 ```php
-// load() returns the bare Yes record (throws on error).
+// load() returns the ENTITY — call data_get() for the Yes record (throws on error).
 $yes = $client->Yes()->load();
 ```
 
@@ -531,11 +532,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$getrandomrejection = $client->GetRandomRejection();
-$getrandomrejection->load();
+$random = $client->Random();
+$random->load();
 
-// $getrandomrejection->data_get() now returns the getrandomrejection data from the last load
-// $getrandomrejection->match_get() returns the last match criteria
+// $random->data_get() now returns the random data from the last load
+// $random->match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration
