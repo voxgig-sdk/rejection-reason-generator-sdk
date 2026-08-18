@@ -1,6 +1,20 @@
 # RejectionReasonGenerator SDK configuration
 
 module RejectionReasonGeneratorConfig
+  # Return the process-wide config, built once on first use. The SDK reads
+  # the config on every request and never writes to it, so one instance is
+  # shared by every client rather than rebuilt per client.
+  #
+  # The returned hash is shared: treat it as read-only. Callers that need to
+  # mutate should use make_config, which always returns a fresh copy.
+  def self.shared_config
+    @shared_config ||= make_config
+  end
+
+
+  # Build a fresh, fully materialised config hash. Every call rebuilds the
+  # whole structure, so prefer shared_config unless you need a private copy
+  # you intend to mutate.
   def self.make_config
     {
       "main" => {
@@ -31,18 +45,12 @@ module RejectionReasonGeneratorConfig
         "get_random_rejection" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "reason",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "type",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
           ],
           "name" => "get_random_rejection",
@@ -52,16 +60,13 @@ module RejectionReasonGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "query" => [
                       {
-                        "active" => true,
                         "example" => "text",
                         "kind" => "query",
                         "name" => "format",
                         "orig" => "format",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                     ],
@@ -79,10 +84,8 @@ module RejectionReasonGeneratorConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -92,11 +95,8 @@ module RejectionReasonGeneratorConfig
         "health" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "status",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
           ],
           "name" => "health",
@@ -106,7 +106,6 @@ module RejectionReasonGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -119,10 +118,8 @@ module RejectionReasonGeneratorConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -138,7 +135,6 @@ module RejectionReasonGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {},
                   "kind" => "http",
                   "method" => "GET",
@@ -151,10 +147,8 @@ module RejectionReasonGeneratorConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -164,18 +158,12 @@ module RejectionReasonGeneratorConfig
         "non" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "reason",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "type",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
           ],
           "name" => "non",
@@ -185,16 +173,13 @@ module RejectionReasonGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "query" => [
                       {
-                        "active" => true,
                         "example" => "text",
                         "kind" => "query",
                         "name" => "format",
                         "orig" => "format",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                     ],
@@ -214,10 +199,8 @@ module RejectionReasonGeneratorConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -227,18 +210,12 @@ module RejectionReasonGeneratorConfig
         "random" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "reason",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "type",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
           ],
           "name" => "random",
@@ -248,16 +225,13 @@ module RejectionReasonGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "query" => [
                       {
-                        "active" => true,
                         "example" => "text",
                         "kind" => "query",
                         "name" => "format",
                         "orig" => "format",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                     ],
@@ -277,10 +251,8 @@ module RejectionReasonGeneratorConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {
@@ -290,18 +262,12 @@ module RejectionReasonGeneratorConfig
         "yes" => {
           "fields" => [
             {
-              "active" => true,
               "name" => "reason",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 0,
             },
             {
-              "active" => true,
               "name" => "type",
-              "req" => false,
               "type" => "`$STRING`",
-              "index$" => 1,
             },
           ],
           "name" => "yes",
@@ -311,16 +277,13 @@ module RejectionReasonGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "active" => true,
                   "args" => {
                     "query" => [
                       {
-                        "active" => true,
                         "example" => "text",
                         "kind" => "query",
                         "name" => "format",
                         "orig" => "format",
-                        "reqd" => false,
                         "type" => "`$STRING`",
                       },
                     ],
@@ -340,10 +303,8 @@ module RejectionReasonGeneratorConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "index$" => 0,
                 },
               ],
-              "key$" => "load",
             },
           },
           "relations" => {

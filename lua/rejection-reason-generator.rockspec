@@ -23,6 +23,7 @@ build = {
   modules = {
     ["rejection-reason-generator_sdk"] = "rejection-reason-generator_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }

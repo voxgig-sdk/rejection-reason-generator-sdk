@@ -40,7 +40,7 @@ class RejectionReasonGeneratorSDK
         $utility = new RejectionReasonGeneratorUtility();
         $this->_utility = $utility;
 
-        $config = RejectionReasonGeneratorConfig::make_config();
+        $config = RejectionReasonGeneratorConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

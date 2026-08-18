@@ -28,7 +28,7 @@ class RejectionReasonGeneratorSDK
     utility = RejectionReasonGeneratorUtility.new
     @_utility = utility
 
-    config = RejectionReasonGeneratorConfig.make_config
+    config = RejectionReasonGeneratorConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
