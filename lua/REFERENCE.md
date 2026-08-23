@@ -110,8 +110,8 @@ local get_random_rejection = client:GetRandomRejection(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -261,8 +261,8 @@ local non = client:Non(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -314,8 +314,8 @@ local random = client:Random(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -367,8 +367,8 @@ local yes = client:Yes(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 

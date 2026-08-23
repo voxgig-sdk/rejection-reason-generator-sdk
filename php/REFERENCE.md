@@ -112,8 +112,8 @@ $get_random_rejection = $client->GetRandomRejection();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -263,8 +263,8 @@ $non = $client->Non();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -316,8 +316,8 @@ $random = $client->Random();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -369,8 +369,8 @@ $yes = $client->Yes();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 

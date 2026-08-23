@@ -33,6 +33,9 @@ class RejectionReasonGeneratorConfig
         return [
             "main" => [
                 "name" => "RejectionReasonGenerator",
+                "slug" => "rejection-reason-generator",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [
@@ -60,10 +63,12 @@ class RejectionReasonGeneratorConfig
           'fields' => [
             [
               'name' => 'reason',
+              'short' => 'The rejection or acceptance reason',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'type',
+              'short' => 'Type of response (yes or no)',
               'type' => '`$STRING`',
             ],
           ],
@@ -173,10 +178,12 @@ class RejectionReasonGeneratorConfig
           'fields' => [
             [
               'name' => 'reason',
+              'short' => 'The rejection or acceptance reason',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'type',
+              'short' => 'Type of response (yes or no)',
               'type' => '`$STRING`',
             ],
           ],
@@ -225,10 +232,12 @@ class RejectionReasonGeneratorConfig
           'fields' => [
             [
               'name' => 'reason',
+              'short' => 'The rejection or acceptance reason',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'type',
+              'short' => 'Type of response (yes or no)',
               'type' => '`$STRING`',
             ],
           ],
@@ -277,10 +286,12 @@ class RejectionReasonGeneratorConfig
           'fields' => [
             [
               'name' => 'reason',
+              'short' => 'The rejection or acceptance reason',
               'type' => '`$STRING`',
             ],
             [
               'name' => 'type',
+              'short' => 'Type of response (yes or no)',
               'type' => '`$STRING`',
             ],
           ],

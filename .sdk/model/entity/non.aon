@@ -1,0 +1,61 @@
+# Entity: non
+
+main: kit: entity: non: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "reason"
+      req: false
+      short: "The rejection or acceptance reason"
+      type: "`$STRING`"
+    }
+    {
+      name: "type"
+      req: false
+      short: "Type of response (yes or no)"
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "non"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "text"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/no"
+          parts: [
+            "no"
+          ]
+          select: {
+            exist: [
+              "format"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

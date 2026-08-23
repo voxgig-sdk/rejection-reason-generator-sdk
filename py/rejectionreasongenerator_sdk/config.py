@@ -28,6 +28,9 @@ def make_config():
     return {
         "main": {
             "name": "RejectionReasonGenerator",
+            "slug": "rejection-reason-generator",
+            "version": "0.0.1",
+            "target": "py",
         },
         "feature": {
             "test": {
@@ -55,10 +58,12 @@ def make_config():
         "fields": [
           {
             "name": "reason",
+            "short": "The rejection or acceptance reason",
             "type": "`$STRING`",
           },
           {
             "name": "type",
+            "short": "Type of response (yes or no)",
             "type": "`$STRING`",
           },
         ],
@@ -168,10 +173,12 @@ def make_config():
         "fields": [
           {
             "name": "reason",
+            "short": "The rejection or acceptance reason",
             "type": "`$STRING`",
           },
           {
             "name": "type",
+            "short": "Type of response (yes or no)",
             "type": "`$STRING`",
           },
         ],
@@ -220,10 +227,12 @@ def make_config():
         "fields": [
           {
             "name": "reason",
+            "short": "The rejection or acceptance reason",
             "type": "`$STRING`",
           },
           {
             "name": "type",
+            "short": "Type of response (yes or no)",
             "type": "`$STRING`",
           },
         ],
@@ -272,10 +281,12 @@ def make_config():
         "fields": [
           {
             "name": "reason",
+            "short": "The rejection or acceptance reason",
             "type": "`$STRING`",
           },
           {
             "name": "type",
+            "short": "Type of response (yes or no)",
             "type": "`$STRING`",
           },
         ],

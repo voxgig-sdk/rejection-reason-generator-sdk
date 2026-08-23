@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "RejectionReasonGenerator",
+      slug = "rejection-reason-generator",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -34,10 +37,12 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "reason",
+            ["short"] = "The rejection or acceptance reason",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "type",
+            ["short"] = "Type of response (yes or no)",
             ["type"] = "`$STRING`",
           },
         },
@@ -147,10 +152,12 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "reason",
+            ["short"] = "The rejection or acceptance reason",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "type",
+            ["short"] = "Type of response (yes or no)",
             ["type"] = "`$STRING`",
           },
         },
@@ -199,10 +206,12 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "reason",
+            ["short"] = "The rejection or acceptance reason",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "type",
+            ["short"] = "Type of response (yes or no)",
             ["type"] = "`$STRING`",
           },
         },
@@ -251,10 +260,12 @@ local function make_config()
         ["fields"] = {
           {
             ["name"] = "reason",
+            ["short"] = "The rejection or acceptance reason",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "type",
+            ["short"] = "Type of response (yes or no)",
             ["type"] = "`$STRING`",
           },
         },

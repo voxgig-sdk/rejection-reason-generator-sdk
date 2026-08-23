@@ -107,8 +107,8 @@ get_random_rejection = client.GetRandomRejection()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `str` | No |  |
-| `type` | `str` | No |  |
+| `reason` | `str` | No | The rejection or acceptance reason |
+| `type` | `str` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -255,8 +255,8 @@ non = client.Non()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `str` | No |  |
-| `type` | `str` | No |  |
+| `reason` | `str` | No | The rejection or acceptance reason |
+| `type` | `str` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -307,8 +307,8 @@ random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `str` | No |  |
-| `type` | `str` | No |  |
+| `reason` | `str` | No | The rejection or acceptance reason |
+| `type` | `str` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -359,8 +359,8 @@ yes = client.Yes()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `str` | No |  |
-| `type` | `str` | No |  |
+| `reason` | `str` | No | The rejection or acceptance reason |
+| `type` | `str` | No | Type of response (yes or no) |
 
 ### Operations
 

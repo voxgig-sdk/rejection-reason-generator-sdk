@@ -1,0 +1,61 @@
+# Entity: yes
+
+main: kit: entity: yes: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "reason"
+      req: false
+      short: "The rejection or acceptance reason"
+      type: "`$STRING`"
+    }
+    {
+      name: "type"
+      req: false
+      short: "Type of response (yes or no)"
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "yes"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "text"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/yes"
+          parts: [
+            "yes"
+          ]
+          select: {
+            exist: [
+              "format"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

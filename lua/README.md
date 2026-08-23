@@ -230,8 +230,8 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `reason` |  |
-| `type` |  |
+| `reason` | The rejection or acceptance reason |
+| `type` | Type of response (yes or no) |
 
 Operations: Load.
 
@@ -260,8 +260,8 @@ API path: `/help`
 
 | Field | Description |
 | --- | --- |
-| `reason` |  |
-| `type` |  |
+| `reason` | The rejection or acceptance reason |
+| `type` | Type of response (yes or no) |
 
 Operations: Load.
 
@@ -271,8 +271,8 @@ API path: `/no`
 
 | Field | Description |
 | --- | --- |
-| `reason` |  |
-| `type` |  |
+| `reason` | The rejection or acceptance reason |
+| `type` | Type of response (yes or no) |
 
 Operations: Load.
 
@@ -282,8 +282,8 @@ API path: `/random`
 
 | Field | Description |
 | --- | --- |
-| `reason` |  |
-| `type` |  |
+| `reason` | The rejection or acceptance reason |
+| `type` | Type of response (yes or no) |
 
 Operations: Load.
 
@@ -308,8 +308,8 @@ Create an instance: `local get_random_rejection = client:GetRandomRejection(nil)
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `string` |  |
-| `type` | `string` |  |
+| `reason` | `string` | The rejection or acceptance reason |
+| `type` | `string` | Type of response (yes or no) |
 
 #### Example: Load
 
@@ -372,8 +372,8 @@ Create an instance: `local non = client:Non(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `string` |  |
-| `type` | `string` |  |
+| `reason` | `string` | The rejection or acceptance reason |
+| `type` | `string` | Type of response (yes or no) |
 
 #### Example: Load
 
@@ -396,8 +396,8 @@ Create an instance: `local random = client:Random(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `string` |  |
-| `type` | `string` |  |
+| `reason` | `string` | The rejection or acceptance reason |
+| `type` | `string` | Type of response (yes or no) |
 
 #### Example: Load
 
@@ -420,8 +420,8 @@ Create an instance: `local yes = client:Yes(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `string` |  |
-| `type` | `string` |  |
+| `reason` | `string` | The rejection or acceptance reason |
+| `type` | `string` | Type of response (yes or no) |
 
 #### Example: Load
 

@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -290,8 +290,8 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `reason` |  |
-| `type` |  |
+| `reason` | The rejection or acceptance reason |
+| `type` | Type of response (yes or no) |
 
 Operations: load.
 
@@ -320,8 +320,8 @@ API path: `/help`
 
 | Field | Description |
 | --- | --- |
-| `reason` |  |
-| `type` |  |
+| `reason` | The rejection or acceptance reason |
+| `type` | Type of response (yes or no) |
 
 Operations: load.
 
@@ -331,8 +331,8 @@ API path: `/no`
 
 | Field | Description |
 | --- | --- |
-| `reason` |  |
-| `type` |  |
+| `reason` | The rejection or acceptance reason |
+| `type` | Type of response (yes or no) |
 
 Operations: load.
 
@@ -342,8 +342,8 @@ API path: `/random`
 
 | Field | Description |
 | --- | --- |
-| `reason` |  |
-| `type` |  |
+| `reason` | The rejection or acceptance reason |
+| `type` | Type of response (yes or no) |
 
 Operations: load.
 
@@ -368,8 +368,8 @@ Create an instance: `const get_random_rejection = client.GetRandomRejection()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `string` |  |
-| `type` | `string` |  |
+| `reason` | `string` | The rejection or acceptance reason |
+| `type` | `string` | Type of response (yes or no) |
 
 #### Example: Load
 
@@ -432,8 +432,8 @@ Create an instance: `const non = client.Non()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `string` |  |
-| `type` | `string` |  |
+| `reason` | `string` | The rejection or acceptance reason |
+| `type` | `string` | Type of response (yes or no) |
 
 #### Example: Load
 
@@ -456,8 +456,8 @@ Create an instance: `const random = client.Random()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `string` |  |
-| `type` | `string` |  |
+| `reason` | `string` | The rejection or acceptance reason |
+| `type` | `string` | Type of response (yes or no) |
 
 #### Example: Load
 
@@ -480,8 +480,8 @@ Create an instance: `const yes = client.Yes()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `string` |  |
-| `type` | `string` |  |
+| `reason` | `string` | The rejection or acceptance reason |
+| `type` | `string` | Type of response (yes or no) |
 
 #### Example: Load
 

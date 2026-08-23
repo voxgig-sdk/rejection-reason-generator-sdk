@@ -118,8 +118,8 @@ fmt.Println(getRandomRejection.GetName()) // "get_random_rejection"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -266,8 +266,8 @@ fmt.Println(non.GetName()) // "non"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -318,8 +318,8 @@ fmt.Println(random.GetName()) // "random"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -370,8 +370,8 @@ fmt.Println(yes.GetName()) // "yes"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 

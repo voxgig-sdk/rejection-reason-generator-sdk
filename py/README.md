@@ -246,8 +246,8 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `reason` |  |
-| `type` |  |
+| `reason` | The rejection or acceptance reason |
+| `type` | Type of response (yes or no) |
 
 Operations: Load.
 
@@ -276,8 +276,8 @@ API path: `/help`
 
 | Field | Description |
 | --- | --- |
-| `reason` |  |
-| `type` |  |
+| `reason` | The rejection or acceptance reason |
+| `type` | Type of response (yes or no) |
 
 Operations: Load.
 
@@ -287,8 +287,8 @@ API path: `/no`
 
 | Field | Description |
 | --- | --- |
-| `reason` |  |
-| `type` |  |
+| `reason` | The rejection or acceptance reason |
+| `type` | Type of response (yes or no) |
 
 Operations: Load.
 
@@ -298,8 +298,8 @@ API path: `/random`
 
 | Field | Description |
 | --- | --- |
-| `reason` |  |
-| `type` |  |
+| `reason` | The rejection or acceptance reason |
+| `type` | Type of response (yes or no) |
 
 Operations: Load.
 
@@ -324,8 +324,8 @@ Create an instance: `get_random_rejection = client.GetRandomRejection()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `str` |  |
-| `type` | `str` |  |
+| `reason` | `str` | The rejection or acceptance reason |
+| `type` | `str` | Type of response (yes or no) |
 
 #### Example: Load
 
@@ -388,8 +388,8 @@ Create an instance: `non = client.Non()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `str` |  |
-| `type` | `str` |  |
+| `reason` | `str` | The rejection or acceptance reason |
+| `type` | `str` | Type of response (yes or no) |
 
 #### Example: Load
 
@@ -412,8 +412,8 @@ Create an instance: `random = client.Random()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `str` |  |
-| `type` | `str` |  |
+| `reason` | `str` | The rejection or acceptance reason |
+| `type` | `str` | Type of response (yes or no) |
 
 #### Example: Load
 
@@ -436,8 +436,8 @@ Create an instance: `yes = client.Yes()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `str` |  |
-| `type` | `str` |  |
+| `reason` | `str` | The rejection or acceptance reason |
+| `type` | `str` | Type of response (yes or no) |
 
 #### Example: Load
 

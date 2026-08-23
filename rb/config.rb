@@ -19,6 +19,9 @@ module RejectionReasonGeneratorConfig
     {
       "main" => {
         "name" => "RejectionReasonGenerator",
+        "slug" => "rejection-reason-generator",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
@@ -46,10 +49,12 @@ module RejectionReasonGeneratorConfig
           "fields" => [
             {
               "name" => "reason",
+              "short" => "The rejection or acceptance reason",
               "type" => "`$STRING`",
             },
             {
               "name" => "type",
+              "short" => "Type of response (yes or no)",
               "type" => "`$STRING`",
             },
           ],
@@ -159,10 +164,12 @@ module RejectionReasonGeneratorConfig
           "fields" => [
             {
               "name" => "reason",
+              "short" => "The rejection or acceptance reason",
               "type" => "`$STRING`",
             },
             {
               "name" => "type",
+              "short" => "Type of response (yes or no)",
               "type" => "`$STRING`",
             },
           ],
@@ -211,10 +218,12 @@ module RejectionReasonGeneratorConfig
           "fields" => [
             {
               "name" => "reason",
+              "short" => "The rejection or acceptance reason",
               "type" => "`$STRING`",
             },
             {
               "name" => "type",
+              "short" => "Type of response (yes or no)",
               "type" => "`$STRING`",
             },
           ],
@@ -263,10 +272,12 @@ module RejectionReasonGeneratorConfig
           "fields" => [
             {
               "name" => "reason",
+              "short" => "The rejection or acceptance reason",
               "type" => "`$STRING`",
             },
             {
               "name" => "type",
+              "short" => "Type of response (yes or no)",
               "type" => "`$STRING`",
             },
           ],

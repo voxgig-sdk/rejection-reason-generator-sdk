@@ -6,7 +6,7 @@ The Golang SDK for the RejectionReasonGenerator API — an entity-oriented clien
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.GetRandomRejection(nil)` — each with the same small set of operations (`Load`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -263,8 +263,8 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"reason"` |  |
-| `"type"` |  |
+| `"reason"` | The rejection or acceptance reason |
+| `"type"` | Type of response (yes or no) |
 
 Operations: Load.
 
@@ -293,8 +293,8 @@ API path: `/help`
 
 | Field | Description |
 | --- | --- |
-| `"reason"` |  |
-| `"type"` |  |
+| `"reason"` | The rejection or acceptance reason |
+| `"type"` | Type of response (yes or no) |
 
 Operations: Load.
 
@@ -304,8 +304,8 @@ API path: `/no`
 
 | Field | Description |
 | --- | --- |
-| `"reason"` |  |
-| `"type"` |  |
+| `"reason"` | The rejection or acceptance reason |
+| `"type"` | Type of response (yes or no) |
 
 Operations: Load.
 
@@ -315,8 +315,8 @@ API path: `/random`
 
 | Field | Description |
 | --- | --- |
-| `"reason"` |  |
-| `"type"` |  |
+| `"reason"` | The rejection or acceptance reason |
+| `"type"` | Type of response (yes or no) |
 
 Operations: Load.
 
@@ -341,8 +341,8 @@ Create an instance: `getRandomRejection := client.GetRandomRejection(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `string` |  |
-| `type` | `string` |  |
+| `reason` | `string` | The rejection or acceptance reason |
+| `type` | `string` | Type of response (yes or no) |
 
 #### Example: Load
 
@@ -417,8 +417,8 @@ Create an instance: `non := client.Non(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `string` |  |
-| `type` | `string` |  |
+| `reason` | `string` | The rejection or acceptance reason |
+| `type` | `string` | Type of response (yes or no) |
 
 #### Example: Load
 
@@ -445,8 +445,8 @@ Create an instance: `random := client.Random(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `string` |  |
-| `type` | `string` |  |
+| `reason` | `string` | The rejection or acceptance reason |
+| `type` | `string` | Type of response (yes or no) |
 
 #### Example: Load
 
@@ -473,8 +473,8 @@ Create an instance: `yes := client.Yes(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `reason` | `string` |  |
-| `type` | `string` |  |
+| `reason` | `string` | The rejection or acceptance reason |
+| `type` | `string` | Type of response (yes or no) |
 
 #### Example: Load
 

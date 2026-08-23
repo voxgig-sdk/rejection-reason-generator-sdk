@@ -36,12 +36,14 @@
               "active": true,
               "name": "reason",
               "req": false,
+              "short": "The rejection or acceptance reason",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": false,
+              "short": "Type of response (yes or no)",
               "type": "`$STRING`"
             }
           ],
@@ -172,12 +174,14 @@
               "active": true,
               "name": "reason",
               "req": false,
+              "short": "The rejection or acceptance reason",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": false,
+              "short": "Type of response (yes or no)",
               "type": "`$STRING`"
             }
           ],
@@ -235,12 +239,14 @@
               "active": true,
               "name": "reason",
               "req": false,
+              "short": "The rejection or acceptance reason",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": false,
+              "short": "Type of response (yes or no)",
               "type": "`$STRING`"
             }
           ],
@@ -298,12 +304,14 @@
               "active": true,
               "name": "reason",
               "req": false,
+              "short": "The rejection or acceptance reason",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "type",
               "req": false,
+              "short": "Type of response (yes or no)",
               "type": "`$STRING`"
             }
           ],

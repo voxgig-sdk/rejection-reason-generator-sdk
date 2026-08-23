@@ -176,8 +176,8 @@ const get_random_rejection = client.GetRandomRejection()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -321,8 +321,8 @@ const non = client.Non()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -372,8 +372,8 @@ const random = client.Random()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 
@@ -423,8 +423,8 @@ const yes = client.Yes()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `reason` | `string` | No |  |
-| `type` | `string` | No |  |
+| `reason` | `string` | No | The rejection or acceptance reason |
+| `type` | `string` | No | Type of response (yes or no) |
 
 ### Operations
 

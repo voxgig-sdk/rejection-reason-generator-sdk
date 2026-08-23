@@ -1,0 +1,58 @@
+# Entity: get_random_rejection
+
+main: kit: entity: get_random_rejection: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "reason"
+      req: false
+      short: "The rejection or acceptance reason"
+      type: "`$STRING`"
+    }
+    {
+      name: "type"
+      req: false
+      short: "Type of response (yes or no)"
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "get_random_rejection"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                example: "text"
+                kind: "query"
+                name: "format"
+                orig: "format"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/"
+          select: {
+            exist: [
+              "format"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}
