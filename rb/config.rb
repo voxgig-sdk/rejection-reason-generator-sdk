@@ -28,6 +28,7 @@ module RejectionReasonGeneratorConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
