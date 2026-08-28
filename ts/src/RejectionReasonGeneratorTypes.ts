@@ -11,8 +11,7 @@ export interface GetRandomRejection {
 }
 
 export interface GetRandomRejectionLoadMatch {
-  reason?: string
-  type?: string
+  format?: string
 }
 
 export interface Health {
@@ -35,8 +34,7 @@ export interface Non {
 }
 
 export interface NonLoadMatch {
-  reason?: string
-  type?: string
+  format?: string
 }
 
 export interface Random {
@@ -45,8 +43,7 @@ export interface Random {
 }
 
 export interface RandomLoadMatch {
-  reason?: string
-  type?: string
+  format?: string
 }
 
 export interface Yes {
@@ -55,7 +52,6 @@ export interface Yes {
 }
 
 export interface YesLoadMatch {
-  reason?: string
-  type?: string
+  format?: string
 }
 

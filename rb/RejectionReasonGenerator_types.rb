@@ -23,14 +23,10 @@ GetRandomRejection = Struct.new(
 
 # Request payload for GetRandomRejection#load.
 #
-# @!attribute [rw] reason
-#   @return [String, nil]
-#
-# @!attribute [rw] type
+# @!attribute [rw] format
 #   @return [String, nil]
 GetRandomRejectionLoadMatch = Struct.new(
-  :reason,
-  :type,
+  :format,
   keyword_init: true
 )
 
@@ -75,14 +71,10 @@ Non = Struct.new(
 
 # Request payload for Non#load.
 #
-# @!attribute [rw] reason
-#   @return [String, nil]
-#
-# @!attribute [rw] type
+# @!attribute [rw] format
 #   @return [String, nil]
 NonLoadMatch = Struct.new(
-  :reason,
-  :type,
+  :format,
   keyword_init: true
 )
 
@@ -101,14 +93,10 @@ RandomType = Struct.new(
 
 # Request payload for Random#load.
 #
-# @!attribute [rw] reason
-#   @return [String, nil]
-#
-# @!attribute [rw] type
+# @!attribute [rw] format
 #   @return [String, nil]
 RandomLoadMatch = Struct.new(
-  :reason,
-  :type,
+  :format,
   keyword_init: true
 )
 
@@ -127,14 +115,10 @@ Yes = Struct.new(
 
 # Request payload for Yes#load.
 #
-# @!attribute [rw] reason
-#   @return [String, nil]
-#
-# @!attribute [rw] type
+# @!attribute [rw] format
 #   @return [String, nil]
 YesLoadMatch = Struct.new(
-  :reason,
-  :type,
+  :format,
   keyword_init: true
 )
 

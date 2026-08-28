@@ -20,8 +20,7 @@ type GetRandomRejection struct {
 
 // GetRandomRejectionLoadMatch is the typed request payload for GetRandomRejection.LoadTyped.
 type GetRandomRejectionLoadMatch struct {
-	Reason *string `json:"reason,omitempty"`
-	Type *string `json:"type,omitempty"`
+	Format *string `json:"format,omitempty"`
 }
 
 // Health is the typed data model for the health entity.
@@ -50,8 +49,7 @@ type Non struct {
 
 // NonLoadMatch is the typed request payload for Non.LoadTyped.
 type NonLoadMatch struct {
-	Reason *string `json:"reason,omitempty"`
-	Type *string `json:"type,omitempty"`
+	Format *string `json:"format,omitempty"`
 }
 
 // Random is the typed data model for the random entity.
@@ -62,8 +60,7 @@ type Random struct {
 
 // RandomLoadMatch is the typed request payload for Random.LoadTyped.
 type RandomLoadMatch struct {
-	Reason *string `json:"reason,omitempty"`
-	Type *string `json:"type,omitempty"`
+	Format *string `json:"format,omitempty"`
 }
 
 // Yes is the typed data model for the yes entity.
@@ -74,8 +71,7 @@ type Yes struct {
 
 // YesLoadMatch is the typed request payload for Yes.LoadTyped.
 type YesLoadMatch struct {
-	Reason *string `json:"reason,omitempty"`
-	Type *string `json:"type,omitempty"`
+	Format *string `json:"format,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

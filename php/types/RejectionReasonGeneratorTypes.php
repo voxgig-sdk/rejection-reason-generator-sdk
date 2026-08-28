@@ -22,8 +22,7 @@ class GetRandomRejection
 /** Request payload for GetRandomRejection#load. */
 class GetRandomRejectionLoadMatch
 {
-    public ?string $reason = null;
-    public ?string $type = null;
+    public ?string $format = null;
 }
 
 /** Health entity data model. */
@@ -58,8 +57,7 @@ class Non
 /** Request payload for Non#load. */
 class NonLoadMatch
 {
-    public ?string $reason = null;
-    public ?string $type = null;
+    public ?string $format = null;
 }
 
 /** Random entity data model. */
@@ -72,8 +70,7 @@ class Random
 /** Request payload for Random#load. */
 class RandomLoadMatch
 {
-    public ?string $reason = null;
-    public ?string $type = null;
+    public ?string $format = null;
 }
 
 /** Yes entity data model. */
@@ -86,7 +83,6 @@ class Yes
 /** Request payload for Yes#load. */
 class YesLoadMatch
 {
-    public ?string $reason = null;
-    public ?string $type = null;
+    public ?string $format = null;
 }
 

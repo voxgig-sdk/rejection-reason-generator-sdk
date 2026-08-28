@@ -22,8 +22,7 @@ class GetRandomRejection(TypedDict, total=False):
 
 
 class GetRandomRejectionLoadMatch(TypedDict, total=False):
-    reason: str
-    type: str
+    format: str
 
 
 class Health(TypedDict, total=False):
@@ -48,8 +47,7 @@ class Non(TypedDict, total=False):
 
 
 class NonLoadMatch(TypedDict, total=False):
-    reason: str
-    type: str
+    format: str
 
 
 class Random(TypedDict, total=False):
@@ -58,8 +56,7 @@ class Random(TypedDict, total=False):
 
 
 class RandomLoadMatch(TypedDict, total=False):
-    reason: str
-    type: str
+    format: str
 
 
 class Yes(TypedDict, total=False):
@@ -68,5 +65,4 @@ class Yes(TypedDict, total=False):
 
 
 class YesLoadMatch(TypedDict, total=False):
-    reason: str
-    type: str
+    format: str

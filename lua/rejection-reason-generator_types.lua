@@ -11,8 +11,7 @@
 ---@field type? string
 
 ---@class GetRandomRejectionLoadMatch
----@field reason? string
----@field type? string
+---@field format? string
 
 ---@class Health
 ---@field status? string
@@ -29,24 +28,21 @@
 ---@field type? string
 
 ---@class NonLoadMatch
----@field reason? string
----@field type? string
+---@field format? string
 
 ---@class Random
 ---@field reason? string
 ---@field type? string
 
 ---@class RandomLoadMatch
----@field reason? string
----@field type? string
+---@field format? string
 
 ---@class Yes
 ---@field reason? string
 ---@field type? string
 
 ---@class YesLoadMatch
----@field reason? string
----@field type? string
+---@field format? string
 
 local M = {}
 
