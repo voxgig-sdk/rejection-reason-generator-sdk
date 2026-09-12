@@ -94,7 +94,7 @@ class RejectionReasonGeneratorConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/',
-                  'parts' => [],
+                  'segments' => [],
                   'select' => [
                     'exist' => [
                       'format',
@@ -104,6 +104,7 @@ class RejectionReasonGeneratorConfig
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
+                  'parts' => [],
                 ],
               ],
             ],
@@ -130,13 +131,18 @@ class RejectionReasonGeneratorConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/health',
-                  'parts' => [
-                    'health',
+                  'segments' => [
+                    [
+                      'lit' => 'health',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'health',
                   ],
                 ],
               ],
@@ -159,13 +165,18 @@ class RejectionReasonGeneratorConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/help',
-                  'parts' => [
-                    'help',
+                  'segments' => [
+                    [
+                      'lit' => 'help',
+                    ],
                   ],
                   'select' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'help',
                   ],
                 ],
               ],
@@ -209,8 +220,10 @@ class RejectionReasonGeneratorConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/no',
-                  'parts' => [
-                    'no',
+                  'segments' => [
+                    [
+                      'lit' => 'no',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -220,6 +233,9 @@ class RejectionReasonGeneratorConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'no',
                   ],
                 ],
               ],
@@ -263,8 +279,10 @@ class RejectionReasonGeneratorConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random',
-                  'parts' => [
-                    'random',
+                  'segments' => [
+                    [
+                      'lit' => 'random',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -274,6 +292,9 @@ class RejectionReasonGeneratorConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'random',
                   ],
                 ],
               ],
@@ -317,8 +338,10 @@ class RejectionReasonGeneratorConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/yes',
-                  'parts' => [
-                    'yes',
+                  'segments' => [
+                    [
+                      'lit' => 'yes',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -328,6 +351,9 @@ class RejectionReasonGeneratorConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'yes',
                   ],
                 ],
               ],

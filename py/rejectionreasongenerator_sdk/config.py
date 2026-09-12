@@ -1,6 +1,14 @@
 # RejectionReasonGenerator SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -89,7 +97,7 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/",
-                "parts": [],
+                "segments": [],
                 "select": {
                   "exist": [
                     "format",
@@ -99,6 +107,7 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [],
               },
             ],
           },
@@ -125,14 +134,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/health",
-                "parts": [
-                  "health",
+                "segments": [
+                  {
+                    "lit": "health",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "health",
+                ],
               },
             ],
           },
@@ -154,14 +168,19 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/help",
-                "parts": [
-                  "help",
+                "segments": [
+                  {
+                    "lit": "help",
+                  },
                 ],
                 "select": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "help",
+                ],
               },
             ],
           },
@@ -204,8 +223,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/no",
-                "parts": [
-                  "no",
+                "segments": [
+                  {
+                    "lit": "no",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -216,6 +237,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "no",
+                ],
               },
             ],
           },
@@ -258,8 +282,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random",
-                "parts": [
-                  "random",
+                "segments": [
+                  {
+                    "lit": "random",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -270,6 +296,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "random",
+                ],
               },
             ],
           },
@@ -312,8 +341,10 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/yes",
-                "parts": [
-                  "yes",
+                "segments": [
+                  {
+                    "lit": "yes",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -324,6 +355,9 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
+                "parts": [
+                  "yes",
+                ],
               },
             ],
           },

@@ -68,7 +68,7 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/",
-                ["parts"] = {},
+                ["segments"] = {},
                 ["select"] = {
                   ["exist"] = {
                     "format",
@@ -78,6 +78,7 @@ local function make_config()
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
                 },
+                ["parts"] = {},
               },
             },
           },
@@ -104,13 +105,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/health",
-                ["parts"] = {
-                  "health",
+                ["segments"] = {
+                  {
+                    ["lit"] = "health",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "health",
                 },
               },
             },
@@ -133,13 +139,18 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/help",
-                ["parts"] = {
-                  "help",
+                ["segments"] = {
+                  {
+                    ["lit"] = "help",
+                  },
                 },
                 ["select"] = {},
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "help",
                 },
               },
             },
@@ -183,8 +194,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/no",
-                ["parts"] = {
-                  "no",
+                ["segments"] = {
+                  {
+                    ["lit"] = "no",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -194,6 +207,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "no",
                 },
               },
             },
@@ -237,8 +253,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/random",
-                ["parts"] = {
-                  "random",
+                ["segments"] = {
+                  {
+                    ["lit"] = "random",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -248,6 +266,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "random",
                 },
               },
             },
@@ -291,8 +312,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/yes",
-                ["parts"] = {
-                  "yes",
+                ["segments"] = {
+                  {
+                    ["lit"] = "yes",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -302,6 +325,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "yes",
                 },
               },
             },

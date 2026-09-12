@@ -1,3 +1,4 @@
 /dist/
 /rejection-reason-generator-cli
 /go-cli
+.jostraca/

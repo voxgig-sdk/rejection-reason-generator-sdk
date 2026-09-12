@@ -80,7 +80,7 @@ module RejectionReasonGeneratorConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/",
-                  "parts" => [],
+                  "segments" => [],
                   "select" => {
                     "exist" => [
                       "format",
@@ -90,6 +90,7 @@ module RejectionReasonGeneratorConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [],
                 },
               ],
             },
@@ -116,14 +117,19 @@ module RejectionReasonGeneratorConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/health",
-                  "parts" => [
-                    "health",
+                  "segments" => [
+                    {
+                      "lit" => "health",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "health",
+                  ],
                 },
               ],
             },
@@ -145,14 +151,19 @@ module RejectionReasonGeneratorConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/help",
-                  "parts" => [
-                    "help",
+                  "segments" => [
+                    {
+                      "lit" => "help",
+                    },
                   ],
                   "select" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "help",
+                  ],
                 },
               ],
             },
@@ -195,8 +206,10 @@ module RejectionReasonGeneratorConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/no",
-                  "parts" => [
-                    "no",
+                  "segments" => [
+                    {
+                      "lit" => "no",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -207,6 +220,9 @@ module RejectionReasonGeneratorConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "no",
+                  ],
                 },
               ],
             },
@@ -249,8 +265,10 @@ module RejectionReasonGeneratorConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random",
-                  "parts" => [
-                    "random",
+                  "segments" => [
+                    {
+                      "lit" => "random",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -261,6 +279,9 @@ module RejectionReasonGeneratorConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "random",
+                  ],
                 },
               ],
             },
@@ -303,8 +324,10 @@ module RejectionReasonGeneratorConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/yes",
-                  "parts" => [
-                    "yes",
+                  "segments" => [
+                    {
+                      "lit" => "yes",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -315,6 +338,9 @@ module RejectionReasonGeneratorConfig
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
+                  "parts" => [
+                    "yes",
+                  ],
                 },
               ],
             },
