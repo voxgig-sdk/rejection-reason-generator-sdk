@@ -105,7 +105,7 @@ local result, err = client:Random():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/rejection-reason-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/rejection-reason-generator-sdk/releases) |
+| TypeScript | `@voxgig-sdk/rejection-reason-generator-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/rejection-reason-generator-sdk/releases) |
 | Python | `voxgig-sdk-rejection-reason-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/rejection-reason-generator-sdk/releases) |
 | PHP | `voxgig-sdk/rejection-reason-generator` | publish pending — [install from git tag](https://github.com/voxgig-sdk/rejection-reason-generator-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/rejection-reason-generator-sdk/go` | `go get github.com/voxgig-sdk/rejection-reason-generator-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Random():load()
 ### TypeScript
 
 ```ts
-import { RejectionReasonGeneratorSDK } from '@voxgig-sdk/rejection-reason-generator'
+import { RejectionReasonGeneratorSDK } from '@voxgig-sdk/rejection-reason-generator-sdk'
 
 const client = new RejectionReasonGeneratorSDK()
 

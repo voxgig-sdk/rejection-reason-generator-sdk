@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { RejectionReasonGeneratorSDK } from '@voxgig-sdk/rejection-reason-generator'
+import { RejectionReasonGeneratorSDK } from '@voxgig-sdk/rejection-reason-generator-sdk'
 
 const client = new RejectionReasonGeneratorSDK()
 ```
@@ -572,7 +572,7 @@ rejection-reason-generator/
 Import the SDK from the package root:
 
 ```ts
-import { RejectionReasonGeneratorSDK } from '@voxgig-sdk/rejection-reason-generator'
+import { RejectionReasonGeneratorSDK } from '@voxgig-sdk/rejection-reason-generator-sdk'
 ```
 
 ### Entity state
