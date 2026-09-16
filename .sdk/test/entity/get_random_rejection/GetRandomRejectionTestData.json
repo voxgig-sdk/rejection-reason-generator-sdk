@@ -25,5 +25,64 @@
         "type": "s51"
       }
     }
+  },
+  "requests": {
+    "GET /": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getRandomRejection",
+        "parameters": [
+          {
+            "description": "Response format (json or plain text)",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "text",
+              "enum": [
+                "json"
+              ],
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "reason": {
+                      "description": "The rejection or acceptance reason",
+                      "example": "Your request has been processed successfully.",
+                      "type": "string"
+                    },
+                    "type": {
+                      "description": "Type of response (yes or no)",
+                      "enum": [
+                        "yes",
+                        "no"
+                      ],
+                      "example": "yes",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                }
+              },
+              "text/plain": {
+                "schema": {
+                  "example": "Your request has been denied due to unforeseen circumstances.",
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Successful response with a random rejection reason"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

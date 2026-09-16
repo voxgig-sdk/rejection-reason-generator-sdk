@@ -1,12 +1,18 @@
 # RejectionReasonGenerator SDK feature factory
 
 from rejectionreasongenerator_sdk.feature.base_feature import RejectionReasonGeneratorBaseFeature
+from rejectionreasongenerator_sdk.feature.ratelimit_feature import RejectionReasonGeneratorRatelimitFeature
+from rejectionreasongenerator_sdk.feature.retry_feature import RejectionReasonGeneratorRetryFeature
 from rejectionreasongenerator_sdk.feature.test_feature import RejectionReasonGeneratorTestFeature
+from rejectionreasongenerator_sdk.feature.timeout_feature import RejectionReasonGeneratorTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: RejectionReasonGeneratorBaseFeature(),
+    "ratelimit": lambda: RejectionReasonGeneratorRatelimitFeature(),
+    "retry": lambda: RejectionReasonGeneratorRetryFeature(),
     "test": lambda: RejectionReasonGeneratorTestFeature(),
+    "timeout": lambda: RejectionReasonGeneratorTimeoutFeature(),
 }
 
 

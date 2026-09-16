@@ -37,6 +37,12 @@ main: kit: entity: yes: {
               }
             ]
           }
+          contract: {
+            id: "GET /yes"
+            json: "{\"operationId\":\"getYesReason\",\"parameters\":[{\"description\":\"Response format (json or plain text)\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"text\",\"enum\":[\"json\"],\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"reason\":{\"description\":\"The rejection or acceptance reason\",\"example\":\"Your request has been processed successfully.\",\"type\":\"string\"},\"type\":{\"description\":\"Type of response (yes or no)\",\"enum\":[\"yes\",\"no\"],\"example\":\"yes\",\"type\":\"string\"}},\"type\":\"object\"}},\"text/plain\":{\"schema\":{\"example\":\"Your request has been approved! Congratulations!\",\"type\":\"string\"}}},\"description\":\"Successful response with a random acceptance reason\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/yes"
           segments: [
