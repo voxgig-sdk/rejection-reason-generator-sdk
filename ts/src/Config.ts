@@ -127,24 +127,24 @@ class Config {
 
     entity: {
       
-      get_random_rejection: {
-      },
-
-      health: {
-      },
-
-      help: {
-      },
-
-      non: {
-      },
-
-      random: {
-      },
-
-      yes: {
-      },
-
+        get_random_rejection: {
+        },
+  
+        health: {
+        },
+  
+        help: {
+        },
+  
+        non: {
+        },
+  
+        random: {
+        },
+  
+        yes: {
+        },
+  
     }
   }
 

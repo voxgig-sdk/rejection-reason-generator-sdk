@@ -1,8 +1,8 @@
 # Entity Models
 
-@"get_random_rejection.aon"
-@"health.aon"
-@"help.aon"
-@"non.aon"
-@"random.aon"
-@"yes.aon"
+@"./get_random_rejection.aon"
+@"./health.aon"
+@"./help.aon"
+@"./non.aon"
+@"./random.aon"
+@"./yes.aon"

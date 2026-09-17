@@ -1,8 +1,8 @@
 # Flows
 
-@"BasicGetRandomRejectionFlow.aon"
-@"BasicHealthFlow.aon"
-@"BasicHelpFlow.aon"
-@"BasicNonFlow.aon"
-@"BasicRandomFlow.aon"
-@"BasicYesFlow.aon"
+@"./BasicGetRandomRejectionFlow.aon"
+@"./BasicHealthFlow.aon"
+@"./BasicHelpFlow.aon"
+@"./BasicNonFlow.aon"
+@"./BasicRandomFlow.aon"
+@"./BasicYesFlow.aon"
