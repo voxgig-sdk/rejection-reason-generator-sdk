@@ -104,13 +104,15 @@ module RejectionReasonGeneratorConfig
           "fields" => [
             {
               "name" => "reason",
-              "short" => "The rejection or acceptance reason",
+              "title" => "Reason",
               "type" => "`$STRING`",
+              "short" => "The rejection or acceptance reason",
             },
             {
               "name" => "type",
-              "short" => "Type of response (yes or no)",
+              "title" => "Type",
               "type" => "`$STRING`",
+              "short" => "Type of response (yes or no)",
             },
           ],
           "name" => "get_random_rejection",
@@ -120,31 +122,32 @@ module RejectionReasonGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "text",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/",
                   "segments" => [],
+                  "parts" => [],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "text",
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [],
                 },
               ],
             },
@@ -157,6 +160,7 @@ module RejectionReasonGeneratorConfig
           "fields" => [
             {
               "name" => "status",
+              "title" => "Status",
               "type" => "`$STRING`",
             },
           ],
@@ -167,7 +171,6 @@ module RejectionReasonGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/health",
@@ -176,14 +179,16 @@ module RejectionReasonGeneratorConfig
                       "lit" => "health",
                     },
                   ],
-                  "select" => {},
+                  "parts" => [
+                    "health",
+                  ],
+                  "rename" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "parts" => [
-                    "health",
-                  ],
+                  "args" => {},
+                  "select" => {},
                 },
               ],
             },
@@ -201,7 +206,6 @@ module RejectionReasonGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {},
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/help",
@@ -210,14 +214,16 @@ module RejectionReasonGeneratorConfig
                       "lit" => "help",
                     },
                   ],
-                  "select" => {},
+                  "parts" => [
+                    "help",
+                  ],
+                  "rename" => {},
                   "transform" => {
                     "req" => "`reqdata`",
                     "res" => "`body`",
                   },
-                  "parts" => [
-                    "help",
-                  ],
+                  "args" => {},
+                  "select" => {},
                 },
               ],
             },
@@ -230,13 +236,15 @@ module RejectionReasonGeneratorConfig
           "fields" => [
             {
               "name" => "reason",
-              "short" => "The rejection or acceptance reason",
+              "title" => "Reason",
               "type" => "`$STRING`",
+              "short" => "The rejection or acceptance reason",
             },
             {
               "name" => "type",
-              "short" => "Type of response (yes or no)",
+              "title" => "Type",
               "type" => "`$STRING`",
+              "short" => "Type of response (yes or no)",
             },
           ],
           "name" => "non",
@@ -246,17 +254,6 @@ module RejectionReasonGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "text",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/no",
@@ -265,18 +262,30 @@ module RejectionReasonGeneratorConfig
                       "lit" => "no",
                     },
                   ],
+                  "parts" => [
+                    "no",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "text",
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "no",
-                  ],
                 },
               ],
             },
@@ -289,13 +298,15 @@ module RejectionReasonGeneratorConfig
           "fields" => [
             {
               "name" => "reason",
-              "short" => "The rejection or acceptance reason",
+              "title" => "Reason",
               "type" => "`$STRING`",
+              "short" => "The rejection or acceptance reason",
             },
             {
               "name" => "type",
-              "short" => "Type of response (yes or no)",
+              "title" => "Type",
               "type" => "`$STRING`",
+              "short" => "Type of response (yes or no)",
             },
           ],
           "name" => "random",
@@ -305,17 +316,6 @@ module RejectionReasonGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "text",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/random",
@@ -324,18 +324,30 @@ module RejectionReasonGeneratorConfig
                       "lit" => "random",
                     },
                   ],
+                  "parts" => [
+                    "random",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "text",
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "random",
-                  ],
                 },
               ],
             },
@@ -348,13 +360,15 @@ module RejectionReasonGeneratorConfig
           "fields" => [
             {
               "name" => "reason",
-              "short" => "The rejection or acceptance reason",
+              "title" => "Reason",
               "type" => "`$STRING`",
+              "short" => "The rejection or acceptance reason",
             },
             {
               "name" => "type",
-              "short" => "Type of response (yes or no)",
+              "title" => "Type",
               "type" => "`$STRING`",
+              "short" => "Type of response (yes or no)",
             },
           ],
           "name" => "yes",
@@ -364,17 +378,6 @@ module RejectionReasonGeneratorConfig
               "name" => "load",
               "points" => [
                 {
-                  "args" => {
-                    "query" => [
-                      {
-                        "example" => "text",
-                        "kind" => "query",
-                        "name" => "format",
-                        "orig" => "format",
-                        "type" => "`$STRING`",
-                      },
-                    ],
-                  },
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/yes",
@@ -383,18 +386,30 @@ module RejectionReasonGeneratorConfig
                       "lit" => "yes",
                     },
                   ],
+                  "parts" => [
+                    "yes",
+                  ],
+                  "rename" => {},
+                  "transform" => {
+                    "req" => "`reqdata`",
+                    "res" => "`body`",
+                  },
+                  "args" => {
+                    "query" => [
+                      {
+                        "name" => "format",
+                        "orig" => "format",
+                        "type" => "`$STRING`",
+                        "kind" => "query",
+                        "example" => "text",
+                      },
+                    ],
+                  },
                   "select" => {
                     "exist" => [
                       "format",
                     ],
                   },
-                  "transform" => {
-                    "req" => "`reqdata`",
-                    "res" => "`body`",
-                  },
-                  "parts" => [
-                    "yes",
-                  ],
                 },
               ],
             },

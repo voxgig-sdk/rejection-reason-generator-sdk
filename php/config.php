@@ -118,13 +118,15 @@ class RejectionReasonGeneratorConfig
           'fields' => [
             [
               'name' => 'reason',
-              'short' => 'The rejection or acceptance reason',
+              'title' => 'Reason',
               'type' => '`$STRING`',
+              'short' => 'The rejection or acceptance reason',
             ],
             [
               'name' => 'type',
-              'short' => 'Type of response (yes or no)',
+              'title' => 'Type',
               'type' => '`$STRING`',
+              'short' => 'Type of response (yes or no)',
             ],
           ],
           'name' => 'get_random_rejection',
@@ -134,31 +136,32 @@ class RejectionReasonGeneratorConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'example' => 'text',
-                        'kind' => 'query',
-                        'name' => 'format',
-                        'orig' => 'format',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/',
                   'segments' => [],
+                  'parts' => [],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'format',
+                        'orig' => 'format',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => 'text',
+                      ],
+                    ],
+                  ],
                   'select' => [
                     'exist' => [
                       'format',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [],
                 ],
               ],
             ],
@@ -171,6 +174,7 @@ class RejectionReasonGeneratorConfig
           'fields' => [
             [
               'name' => 'status',
+              'title' => 'Status',
               'type' => '`$STRING`',
             ],
           ],
@@ -181,7 +185,6 @@ class RejectionReasonGeneratorConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/health',
@@ -190,14 +193,16 @@ class RejectionReasonGeneratorConfig
                       'lit' => 'health',
                     ],
                   ],
-                  'select' => [],
+                  'parts' => [
+                    'health',
+                  ],
+                  'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'parts' => [
-                    'health',
-                  ],
+                  'args' => [],
+                  'select' => [],
                 ],
               ],
             ],
@@ -215,7 +220,6 @@ class RejectionReasonGeneratorConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/help',
@@ -224,14 +228,16 @@ class RejectionReasonGeneratorConfig
                       'lit' => 'help',
                     ],
                   ],
-                  'select' => [],
+                  'parts' => [
+                    'help',
+                  ],
+                  'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'parts' => [
-                    'help',
-                  ],
+                  'args' => [],
+                  'select' => [],
                 ],
               ],
             ],
@@ -244,13 +250,15 @@ class RejectionReasonGeneratorConfig
           'fields' => [
             [
               'name' => 'reason',
-              'short' => 'The rejection or acceptance reason',
+              'title' => 'Reason',
               'type' => '`$STRING`',
+              'short' => 'The rejection or acceptance reason',
             ],
             [
               'name' => 'type',
-              'short' => 'Type of response (yes or no)',
+              'title' => 'Type',
               'type' => '`$STRING`',
+              'short' => 'Type of response (yes or no)',
             ],
           ],
           'name' => 'non',
@@ -260,17 +268,6 @@ class RejectionReasonGeneratorConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'example' => 'text',
-                        'kind' => 'query',
-                        'name' => 'format',
-                        'orig' => 'format',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/no',
@@ -279,17 +276,29 @@ class RejectionReasonGeneratorConfig
                       'lit' => 'no',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'format',
-                    ],
+                  'parts' => [
+                    'no',
                   ],
+                  'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'parts' => [
-                    'no',
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'format',
+                        'orig' => 'format',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => 'text',
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'format',
+                    ],
                   ],
                 ],
               ],
@@ -303,13 +312,15 @@ class RejectionReasonGeneratorConfig
           'fields' => [
             [
               'name' => 'reason',
-              'short' => 'The rejection or acceptance reason',
+              'title' => 'Reason',
               'type' => '`$STRING`',
+              'short' => 'The rejection or acceptance reason',
             ],
             [
               'name' => 'type',
-              'short' => 'Type of response (yes or no)',
+              'title' => 'Type',
               'type' => '`$STRING`',
+              'short' => 'Type of response (yes or no)',
             ],
           ],
           'name' => 'random',
@@ -319,17 +330,6 @@ class RejectionReasonGeneratorConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'example' => 'text',
-                        'kind' => 'query',
-                        'name' => 'format',
-                        'orig' => 'format',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/random',
@@ -338,17 +338,29 @@ class RejectionReasonGeneratorConfig
                       'lit' => 'random',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'format',
-                    ],
+                  'parts' => [
+                    'random',
                   ],
+                  'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'parts' => [
-                    'random',
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'format',
+                        'orig' => 'format',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => 'text',
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'format',
+                    ],
                   ],
                 ],
               ],
@@ -362,13 +374,15 @@ class RejectionReasonGeneratorConfig
           'fields' => [
             [
               'name' => 'reason',
-              'short' => 'The rejection or acceptance reason',
+              'title' => 'Reason',
               'type' => '`$STRING`',
+              'short' => 'The rejection or acceptance reason',
             ],
             [
               'name' => 'type',
-              'short' => 'Type of response (yes or no)',
+              'title' => 'Type',
               'type' => '`$STRING`',
+              'short' => 'Type of response (yes or no)',
             ],
           ],
           'name' => 'yes',
@@ -378,17 +392,6 @@ class RejectionReasonGeneratorConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'example' => 'text',
-                        'kind' => 'query',
-                        'name' => 'format',
-                        'orig' => 'format',
-                        'type' => '`$STRING`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/yes',
@@ -397,17 +400,29 @@ class RejectionReasonGeneratorConfig
                       'lit' => 'yes',
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'format',
-                    ],
+                  'parts' => [
+                    'yes',
                   ],
+                  'rename' => [],
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
                   ],
-                  'parts' => [
-                    'yes',
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'format',
+                        'orig' => 'format',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => 'text',
+                      ],
+                    ],
+                  ],
+                  'select' => [
+                    'exist' => [
+                      'format',
+                    ],
                   ],
                 ],
               ],

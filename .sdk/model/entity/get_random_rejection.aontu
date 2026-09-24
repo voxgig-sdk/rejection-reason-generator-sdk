@@ -1,0 +1,65 @@
+# Entity: get_random_rejection
+
+main: kit: entity: get_random_rejection: {
+
+  alias: field: {}
+
+  fields: {
+    reason: {
+      h: "Reason"
+      n: "reason"
+      r: false
+      sh: "The rejection or acceptance reason"
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      sh: "Type of response (yes or no)"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "get_random_rejection"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "text"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/"
+          q: {
+            exist: [
+              "format"
+            ]
+          }
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

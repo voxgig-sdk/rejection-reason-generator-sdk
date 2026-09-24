@@ -1,0 +1,70 @@
+# Entity: random
+
+main: kit: entity: random: {
+
+  alias: field: {}
+
+  fields: {
+    reason: {
+      h: "Reason"
+      n: "reason"
+      r: false
+      sh: "The rejection or acceptance reason"
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      sh: "Type of response (yes or no)"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "random"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /random"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "text"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/random"
+          q: {
+            exist: [
+              "format"
+            ]
+          }
+          s: [
+            {
+              lit: "random"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

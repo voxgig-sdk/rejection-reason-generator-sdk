@@ -1,7 +1,7 @@
 // Typed models for the RejectionReasonGenerator SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,8 +14,6 @@ import (
 
 // GetRandomRejection is the typed data model for the get_random_rejection entity.
 type GetRandomRejection struct {
-	Reason *string `json:"reason,omitempty"`
-	Type *string `json:"type,omitempty"`
 }
 
 // GetRandomRejectionLoadMatch is the typed request payload for GetRandomRejection.LoadTyped.
@@ -25,7 +23,6 @@ type GetRandomRejectionLoadMatch struct {
 
 // Health is the typed data model for the health entity.
 type Health struct {
-	Status *string `json:"status,omitempty"`
 }
 
 // HealthLoadMatch is the typed request payload for Health.LoadTyped.
@@ -43,8 +40,6 @@ type HelpLoadMatch struct {
 
 // Non is the typed data model for the non entity.
 type Non struct {
-	Reason *string `json:"reason,omitempty"`
-	Type *string `json:"type,omitempty"`
 }
 
 // NonLoadMatch is the typed request payload for Non.LoadTyped.
@@ -54,8 +49,6 @@ type NonLoadMatch struct {
 
 // Random is the typed data model for the random entity.
 type Random struct {
-	Reason *string `json:"reason,omitempty"`
-	Type *string `json:"type,omitempty"`
 }
 
 // RandomLoadMatch is the typed request payload for Random.LoadTyped.
@@ -65,8 +58,6 @@ type RandomLoadMatch struct {
 
 // Yes is the typed data model for the yes entity.
 type Yes struct {
-	Reason *string `json:"reason,omitempty"`
-	Type *string `json:"type,omitempty"`
 }
 
 // YesLoadMatch is the typed request payload for Yes.LoadTyped.

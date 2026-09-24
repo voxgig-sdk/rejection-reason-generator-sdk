@@ -11,19 +11,12 @@ const FEATURE_CLASS = {
     test: TestFeature_1.TestFeature,
     timeout: TimeoutFeature_1.TimeoutFeature,
 };
-// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
-// the model's active plugin groups. A feature that takes a `plugins` option
-// (secrets over sekreto) reads its own entry; a feature with no plugins has
-// none. Named imports above make each definition statically reachable, so
-// an SDK carries exactly the plugin modules its model selects — the same
-// leanness the old side-effect registry imports bought, without a registry.
 const FEATURE_PLUGINS = {};
 exports.FEATURE_PLUGINS = FEATURE_PLUGINS;
 class Config {
     makeFeature(fn) {
         const fc = FEATURE_CLASS[fn];
         const fi = new fc();
-        // TODO: errors etc
         return fi;
     }
     // False for a feature added at runtime via options.extend (station's
@@ -119,13 +112,15 @@ class Config {
             "fields": [
                 {
                     "name": "reason",
-                    "short": "The rejection or acceptance reason",
-                    "type": "`$STRING`"
+                    "title": "Reason",
+                    "type": "`$STRING`",
+                    "short": "The rejection or acceptance reason"
                 },
                 {
                     "name": "type",
-                    "short": "Type of response (yes or no)",
-                    "type": "`$STRING`"
+                    "title": "Type",
+                    "type": "`$STRING`",
+                    "short": "Type of response (yes or no)"
                 }
             ],
             "name": "get_random_rejection",
@@ -135,31 +130,32 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": "text",
-                                        "kind": "query",
-                                        "name": "format",
-                                        "orig": "format",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/",
                             "segments": [],
-                            "select": {
-                                "exist": [
-                                    "format"
-                                ]
-                            },
+                            "parts": [],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": []
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "format",
+                                        "orig": "format",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "text"
+                                    }
+                                ]
+                            },
+                            "select": {
+                                "exist": [
+                                    "format"
+                                ]
+                            }
                         }
                     ]
                 }
@@ -172,6 +168,7 @@ class Config {
             "fields": [
                 {
                     "name": "status",
+                    "title": "Status",
                     "type": "`$STRING`"
                 }
             ],
@@ -182,7 +179,6 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "GET",
                             "orig": "/health",
@@ -191,14 +187,16 @@ class Config {
                                     "lit": "health"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "health"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "health"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -216,7 +214,6 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {},
                             "kind": "http",
                             "method": "GET",
                             "orig": "/help",
@@ -225,14 +222,16 @@ class Config {
                                     "lit": "help"
                                 }
                             ],
-                            "select": {},
+                            "parts": [
+                                "help"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "help"
-                            ]
+                            "args": {},
+                            "select": {}
                         }
                     ]
                 }
@@ -245,13 +244,15 @@ class Config {
             "fields": [
                 {
                     "name": "reason",
-                    "short": "The rejection or acceptance reason",
-                    "type": "`$STRING`"
+                    "title": "Reason",
+                    "type": "`$STRING`",
+                    "short": "The rejection or acceptance reason"
                 },
                 {
                     "name": "type",
-                    "short": "Type of response (yes or no)",
-                    "type": "`$STRING`"
+                    "title": "Type",
+                    "type": "`$STRING`",
+                    "short": "Type of response (yes or no)"
                 }
             ],
             "name": "non",
@@ -261,17 +262,6 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": "text",
-                                        "kind": "query",
-                                        "name": "format",
-                                        "orig": "format",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/no",
@@ -280,18 +270,30 @@ class Config {
                                     "lit": "no"
                                 }
                             ],
-                            "select": {
-                                "exist": [
-                                    "format"
-                                ]
-                            },
+                            "parts": [
+                                "no"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "no"
-                            ]
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "format",
+                                        "orig": "format",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "text"
+                                    }
+                                ]
+                            },
+                            "select": {
+                                "exist": [
+                                    "format"
+                                ]
+                            }
                         }
                     ]
                 }
@@ -304,13 +306,15 @@ class Config {
             "fields": [
                 {
                     "name": "reason",
-                    "short": "The rejection or acceptance reason",
-                    "type": "`$STRING`"
+                    "title": "Reason",
+                    "type": "`$STRING`",
+                    "short": "The rejection or acceptance reason"
                 },
                 {
                     "name": "type",
-                    "short": "Type of response (yes or no)",
-                    "type": "`$STRING`"
+                    "title": "Type",
+                    "type": "`$STRING`",
+                    "short": "Type of response (yes or no)"
                 }
             ],
             "name": "random",
@@ -320,17 +324,6 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": "text",
-                                        "kind": "query",
-                                        "name": "format",
-                                        "orig": "format",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/random",
@@ -339,18 +332,30 @@ class Config {
                                     "lit": "random"
                                 }
                             ],
-                            "select": {
-                                "exist": [
-                                    "format"
-                                ]
-                            },
+                            "parts": [
+                                "random"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "random"
-                            ]
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "format",
+                                        "orig": "format",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "text"
+                                    }
+                                ]
+                            },
+                            "select": {
+                                "exist": [
+                                    "format"
+                                ]
+                            }
                         }
                     ]
                 }
@@ -363,13 +368,15 @@ class Config {
             "fields": [
                 {
                     "name": "reason",
-                    "short": "The rejection or acceptance reason",
-                    "type": "`$STRING`"
+                    "title": "Reason",
+                    "type": "`$STRING`",
+                    "short": "The rejection or acceptance reason"
                 },
                 {
                     "name": "type",
-                    "short": "Type of response (yes or no)",
-                    "type": "`$STRING`"
+                    "title": "Type",
+                    "type": "`$STRING`",
+                    "short": "Type of response (yes or no)"
                 }
             ],
             "name": "yes",
@@ -379,17 +386,6 @@ class Config {
                     "name": "load",
                     "points": [
                         {
-                            "args": {
-                                "query": [
-                                    {
-                                        "example": "text",
-                                        "kind": "query",
-                                        "name": "format",
-                                        "orig": "format",
-                                        "type": "`$STRING`"
-                                    }
-                                ]
-                            },
                             "kind": "http",
                             "method": "GET",
                             "orig": "/yes",
@@ -398,18 +394,30 @@ class Config {
                                     "lit": "yes"
                                 }
                             ],
-                            "select": {
-                                "exist": [
-                                    "format"
-                                ]
-                            },
+                            "parts": [
+                                "yes"
+                            ],
+                            "rename": {},
                             "transform": {
                                 "req": "`reqdata`",
                                 "res": "`body`"
                             },
-                            "parts": [
-                                "yes"
-                            ]
+                            "args": {
+                                "query": [
+                                    {
+                                        "name": "format",
+                                        "orig": "format",
+                                        "type": "`$STRING`",
+                                        "kind": "query",
+                                        "example": "text"
+                                    }
+                                ]
+                            },
+                            "select": {
+                                "exist": [
+                                    "format"
+                                ]
+                            }
                         }
                     ]
                 }

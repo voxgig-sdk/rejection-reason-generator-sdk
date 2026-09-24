@@ -1,0 +1,70 @@
+# Entity: yes
+
+main: kit: entity: yes: {
+
+  alias: field: {}
+
+  fields: {
+    reason: {
+      h: "Reason"
+      n: "reason"
+      r: false
+      sh: "The rejection or acceptance reason"
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      sh: "Type of response (yes or no)"
+      t: "`$STRING`"
+    }
+  }
+
+  name: "yes"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /yes"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                ex: "text"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/yes"
+          q: {
+            exist: [
+              "format"
+            ]
+          }
+          s: [
+            {
+              lit: "yes"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

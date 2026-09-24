@@ -121,13 +121,15 @@ def make_config():
         "fields": [
           {
             "name": "reason",
-            "short": "The rejection or acceptance reason",
+            "title": "Reason",
             "type": "`$STRING`",
+            "short": "The rejection or acceptance reason",
           },
           {
             "name": "type",
-            "short": "Type of response (yes or no)",
+            "title": "Type",
             "type": "`$STRING`",
+            "short": "Type of response (yes or no)",
           },
         ],
         "name": "get_random_rejection",
@@ -137,31 +139,32 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": "text",
-                      "kind": "query",
-                      "name": "format",
-                      "orig": "format",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/",
                 "segments": [],
+                "parts": [],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "format",
+                      "orig": "format",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "text",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "format",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [],
               },
             ],
           },
@@ -174,6 +177,7 @@ def make_config():
         "fields": [
           {
             "name": "status",
+            "title": "Status",
             "type": "`$STRING`",
           },
         ],
@@ -184,7 +188,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/health",
@@ -193,14 +196,16 @@ def make_config():
                     "lit": "health",
                   },
                 ],
-                "select": {},
+                "parts": [
+                  "health",
+                ],
+                "rename": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "parts": [
-                  "health",
-                ],
+                "args": {},
+                "select": {},
               },
             ],
           },
@@ -218,7 +223,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {},
                 "kind": "http",
                 "method": "GET",
                 "orig": "/help",
@@ -227,14 +231,16 @@ def make_config():
                     "lit": "help",
                   },
                 ],
-                "select": {},
+                "parts": [
+                  "help",
+                ],
+                "rename": {},
                 "transform": {
                   "req": "`reqdata`",
                   "res": "`body`",
                 },
-                "parts": [
-                  "help",
-                ],
+                "args": {},
+                "select": {},
               },
             ],
           },
@@ -247,13 +253,15 @@ def make_config():
         "fields": [
           {
             "name": "reason",
-            "short": "The rejection or acceptance reason",
+            "title": "Reason",
             "type": "`$STRING`",
+            "short": "The rejection or acceptance reason",
           },
           {
             "name": "type",
-            "short": "Type of response (yes or no)",
+            "title": "Type",
             "type": "`$STRING`",
+            "short": "Type of response (yes or no)",
           },
         ],
         "name": "non",
@@ -263,17 +271,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": "text",
-                      "kind": "query",
-                      "name": "format",
-                      "orig": "format",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/no",
@@ -282,18 +279,30 @@ def make_config():
                     "lit": "no",
                   },
                 ],
+                "parts": [
+                  "no",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "format",
+                      "orig": "format",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "text",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "format",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "no",
-                ],
               },
             ],
           },
@@ -306,13 +315,15 @@ def make_config():
         "fields": [
           {
             "name": "reason",
-            "short": "The rejection or acceptance reason",
+            "title": "Reason",
             "type": "`$STRING`",
+            "short": "The rejection or acceptance reason",
           },
           {
             "name": "type",
-            "short": "Type of response (yes or no)",
+            "title": "Type",
             "type": "`$STRING`",
+            "short": "Type of response (yes or no)",
           },
         ],
         "name": "random",
@@ -322,17 +333,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": "text",
-                      "kind": "query",
-                      "name": "format",
-                      "orig": "format",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/random",
@@ -341,18 +341,30 @@ def make_config():
                     "lit": "random",
                   },
                 ],
+                "parts": [
+                  "random",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "format",
+                      "orig": "format",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "text",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "format",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "random",
-                ],
               },
             ],
           },
@@ -365,13 +377,15 @@ def make_config():
         "fields": [
           {
             "name": "reason",
-            "short": "The rejection or acceptance reason",
+            "title": "Reason",
             "type": "`$STRING`",
+            "short": "The rejection or acceptance reason",
           },
           {
             "name": "type",
-            "short": "Type of response (yes or no)",
+            "title": "Type",
             "type": "`$STRING`",
+            "short": "Type of response (yes or no)",
           },
         ],
         "name": "yes",
@@ -381,17 +395,6 @@ def make_config():
             "name": "load",
             "points": [
               {
-                "args": {
-                  "query": [
-                    {
-                      "example": "text",
-                      "kind": "query",
-                      "name": "format",
-                      "orig": "format",
-                      "type": "`$STRING`",
-                    },
-                  ],
-                },
                 "kind": "http",
                 "method": "GET",
                 "orig": "/yes",
@@ -400,18 +403,30 @@ def make_config():
                     "lit": "yes",
                   },
                 ],
+                "parts": [
+                  "yes",
+                ],
+                "rename": {},
+                "transform": {
+                  "req": "`reqdata`",
+                  "res": "`body`",
+                },
+                "args": {
+                  "query": [
+                    {
+                      "name": "format",
+                      "orig": "format",
+                      "type": "`$STRING`",
+                      "kind": "query",
+                      "example": "text",
+                    },
+                  ],
+                },
                 "select": {
                   "exist": [
                     "format",
                   ],
                 },
-                "transform": {
-                  "req": "`reqdata`",
-                  "res": "`body`",
-                },
-                "parts": [
-                  "yes",
-                ],
               },
             ],
           },

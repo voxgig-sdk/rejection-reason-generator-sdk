@@ -1,0 +1,28 @@
+# BasicNonFlow
+
+main: kit: flow: BasicNonFlow:
+{
+  entity: "non",
+  kind: "basic",
+  name: "BasicNonFlow",
+  step: [
+    {
+      i: {
+        ref: "non_ref01",
+        srcdatavar: "non_ref01_data",
+        suffix: "_dt0"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-non_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicNonFlow"
+}

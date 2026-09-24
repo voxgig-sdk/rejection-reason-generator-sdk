@@ -96,13 +96,15 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "reason",
-						"short": "The rejection or acceptance reason",
+						"title": "Reason",
 						"type": "`$STRING`",
+						"short": "The rejection or acceptance reason",
 					},
 					map[string]any{
 						"name": "type",
-						"short": "Type of response (yes or no)",
+						"title": "Type",
 						"type": "`$STRING`",
+						"short": "Type of response (yes or no)",
 					},
 				},
 				"name": "get_random_rejection",
@@ -112,31 +114,32 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": "text",
-											"kind": "query",
-											"name": "format",
-											"orig": "format",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/",
 								"segments": []any{},
+								"parts": []any{},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "format",
+											"orig": "format",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "text",
+										},
+									},
+								},
 								"select": map[string]any{
 									"exist": []any{
 										"format",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{},
 							},
 						},
 					},
@@ -149,6 +152,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "status",
+						"title": "Status",
 						"type": "`$STRING`",
 					},
 				},
@@ -159,7 +163,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/health",
@@ -168,14 +171,16 @@ func MakeConfig() map[string]any {
 										"lit": "health",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"health",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"health",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -193,7 +198,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/help",
@@ -202,14 +206,16 @@ func MakeConfig() map[string]any {
 										"lit": "help",
 									},
 								},
-								"select": map[string]any{},
+								"parts": []any{
+									"help",
+								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"help",
-								},
+								"args": map[string]any{},
+								"select": map[string]any{},
 							},
 						},
 					},
@@ -222,13 +228,15 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "reason",
-						"short": "The rejection or acceptance reason",
+						"title": "Reason",
 						"type": "`$STRING`",
+						"short": "The rejection or acceptance reason",
 					},
 					map[string]any{
 						"name": "type",
-						"short": "Type of response (yes or no)",
+						"title": "Type",
 						"type": "`$STRING`",
+						"short": "Type of response (yes or no)",
 					},
 				},
 				"name": "non",
@@ -238,17 +246,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": "text",
-											"kind": "query",
-											"name": "format",
-											"orig": "format",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/no",
@@ -257,17 +254,29 @@ func MakeConfig() map[string]any {
 										"lit": "no",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"format",
-									},
+								"parts": []any{
+									"no",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"no",
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "format",
+											"orig": "format",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "text",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"format",
+									},
 								},
 							},
 						},
@@ -281,13 +290,15 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "reason",
-						"short": "The rejection or acceptance reason",
+						"title": "Reason",
 						"type": "`$STRING`",
+						"short": "The rejection or acceptance reason",
 					},
 					map[string]any{
 						"name": "type",
-						"short": "Type of response (yes or no)",
+						"title": "Type",
 						"type": "`$STRING`",
+						"short": "Type of response (yes or no)",
 					},
 				},
 				"name": "random",
@@ -297,17 +308,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": "text",
-											"kind": "query",
-											"name": "format",
-											"orig": "format",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/random",
@@ -316,17 +316,29 @@ func MakeConfig() map[string]any {
 										"lit": "random",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"format",
-									},
+								"parts": []any{
+									"random",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"random",
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "format",
+											"orig": "format",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "text",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"format",
+									},
 								},
 							},
 						},
@@ -340,13 +352,15 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "reason",
-						"short": "The rejection or acceptance reason",
+						"title": "Reason",
 						"type": "`$STRING`",
+						"short": "The rejection or acceptance reason",
 					},
 					map[string]any{
 						"name": "type",
-						"short": "Type of response (yes or no)",
+						"title": "Type",
 						"type": "`$STRING`",
+						"short": "Type of response (yes or no)",
 					},
 				},
 				"name": "yes",
@@ -356,17 +370,6 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"example": "text",
-											"kind": "query",
-											"name": "format",
-											"orig": "format",
-											"type": "`$STRING`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/yes",
@@ -375,17 +378,29 @@ func MakeConfig() map[string]any {
 										"lit": "yes",
 									},
 								},
-								"select": map[string]any{
-									"exist": []any{
-										"format",
-									},
+								"parts": []any{
+									"yes",
 								},
+								"rename": map[string]any{},
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body`",
 								},
-								"parts": []any{
-									"yes",
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "format",
+											"orig": "format",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "text",
+										},
+									},
+								},
+								"select": map[string]any{
+									"exist": []any{
+										"format",
+									},
 								},
 							},
 						},
