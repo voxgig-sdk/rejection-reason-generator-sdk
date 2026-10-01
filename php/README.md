@@ -12,9 +12,14 @@ The SDK exposes the API as capitalised, semantic **Entities** — for example `$
 
 ## Install
 This package is not yet published to Packagist. Install it from the
-GitHub release tag (`php/vX.Y.Z`):
+GitHub release tag (`php/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/rejection-reason-generator-sdk/releases)), or
+from a clone as a Composer path repository:
 
-- Releases: [https://github.com/voxgig-sdk/rejection-reason-generator-sdk/releases](https://github.com/voxgig-sdk/rejection-reason-generator-sdk/releases)
+```bash
+git clone https://github.com/voxgig-sdk/rejection-reason-generator-sdk
+composer config repositories.rejection-reason-generator-sdk path ./rejection-reason-generator-sdk/php
+composer require voxgig-sdk/rejection-reason-generator-sdk:@dev
+```
 
 
 ## Tutorial: your first API call

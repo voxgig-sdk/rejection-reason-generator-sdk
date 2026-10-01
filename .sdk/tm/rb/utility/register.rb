@@ -33,6 +33,8 @@ require_relative 'transform_response'
 
 RejectionReasonGeneratorUtility.registrar = ->(u) {
   u.clean = RejectionReasonGeneratorUtilities::Clean
+  u.clean_add = RejectionReasonGeneratorUtilities::CleanAdd
+  u.clean_explain = RejectionReasonGeneratorUtilities::CleanExplain
   u.done = RejectionReasonGeneratorUtilities::Done
   u.make_error = RejectionReasonGeneratorUtilities::MakeError
   u.feature_add = RejectionReasonGeneratorUtilities::FeatureAdd

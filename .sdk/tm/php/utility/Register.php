@@ -37,6 +37,8 @@ require_once __DIR__ . '/TransformResponse.php';
 
 RejectionReasonGeneratorUtility::setRegistrar(function (RejectionReasonGeneratorUtility $u): void {
     $u->clean = [RejectionReasonGeneratorClean::class, 'call'];
+    $u->clean_add = [RejectionReasonGeneratorClean::class, 'add'];
+    $u->clean_explain = [RejectionReasonGeneratorDone::class, 'clean_explain'];
     $u->done = [RejectionReasonGeneratorDone::class, 'call'];
     $u->make_error = [RejectionReasonGeneratorMakeError::class, 'call'];
     $u->feature_add = [RejectionReasonGeneratorFeatureAdd::class, 'call'];
