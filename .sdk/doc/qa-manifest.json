@@ -3,5 +3,18 @@
     "SUMMARY.md"
   ],
   "config": ".sdk/doc/qa/vale.ini",
-  "routes": {}
+  "routes": {},
+  "quoted": {
+    "SUMMARY.md": [
+      "Help information",
+      "Production server",
+      "Service is healthy",
+      "Successful response with a random acceptance or rejection reason",
+      "Successful response with a random acceptance reason",
+      "Successful response with a random rejection reason",
+      "The rejection or acceptance reason",
+      "This API provides a variety of random rejection and acceptance reasons, offering a creative and sometimes humorous take on the responses one might receive. Users can easily access specific reasons through various endpoints, making it a fun tool for generating feedback.",
+      "Type of response (yes or no)"
+    ]
+  }
 }

@@ -87,6 +87,7 @@ class Config {
             },
             "optspec": {
                 "clearTimer": "`$FUNCTION`",
+                "now": "`$FUNCTION`",
                 "setTimer": "`$FUNCTION`"
             },
             "strict": false,
@@ -151,10 +152,16 @@ class Config {
                                     }
                                 ]
                             },
-                            "select": {
-                                "exist": [
-                                    "format"
-                                ]
+                            "select": {},
+                            "response": {
+                                "alternatives": [
+                                    {
+                                        "kind": "raw",
+                                        "media": "text/plain"
+                                    }
+                                ],
+                                "kind": "json",
+                                "media": "application/json"
                             }
                         }
                     ]
@@ -196,7 +203,17 @@ class Config {
                                 "res": "`body`"
                             },
                             "args": {},
-                            "select": {}
+                            "select": {},
+                            "response": {
+                                "alternatives": [
+                                    {
+                                        "kind": "raw",
+                                        "media": "text/plain"
+                                    }
+                                ],
+                                "kind": "json",
+                                "media": "application/json"
+                            }
                         }
                     ]
                 }
@@ -231,7 +248,17 @@ class Config {
                                 "res": "`body`"
                             },
                             "args": {},
-                            "select": {}
+                            "select": {},
+                            "response": {
+                                "alternatives": [
+                                    {
+                                        "kind": "raw",
+                                        "media": "text/plain"
+                                    }
+                                ],
+                                "kind": "raw",
+                                "media": "text/html"
+                            }
                         }
                     ]
                 }
@@ -289,10 +316,16 @@ class Config {
                                     }
                                 ]
                             },
-                            "select": {
-                                "exist": [
-                                    "format"
-                                ]
+                            "select": {},
+                            "response": {
+                                "alternatives": [
+                                    {
+                                        "kind": "raw",
+                                        "media": "text/plain"
+                                    }
+                                ],
+                                "kind": "json",
+                                "media": "application/json"
                             }
                         }
                     ]
@@ -351,10 +384,16 @@ class Config {
                                     }
                                 ]
                             },
-                            "select": {
-                                "exist": [
-                                    "format"
-                                ]
+                            "select": {},
+                            "response": {
+                                "alternatives": [
+                                    {
+                                        "kind": "raw",
+                                        "media": "text/plain"
+                                    }
+                                ],
+                                "kind": "json",
+                                "media": "application/json"
                             }
                         }
                     ]
@@ -413,10 +452,16 @@ class Config {
                                     }
                                 ]
                             },
-                            "select": {
-                                "exist": [
-                                    "format"
-                                ]
+                            "select": {},
+                            "response": {
+                                "alternatives": [
+                                    {
+                                        "kind": "raw",
+                                        "media": "text/plain"
+                                    }
+                                ],
+                                "kind": "json",
+                                "media": "application/json"
                             }
                         }
                     ]

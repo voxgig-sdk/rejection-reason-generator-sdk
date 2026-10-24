@@ -67,6 +67,7 @@ local function make_config()
         },
         ["optspec"] = {
           ["clearTimer"] = "`$FUNCTION`",
+          ["now"] = "`$FUNCTION`",
           ["setTimer"] = "`$FUNCTION`",
         },
         ["strict"] = false,
@@ -131,10 +132,16 @@ local function make_config()
                     },
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "format",
+                ["select"] = {},
+                ["response"] = {
+                  ["alternatives"] = {
+                    {
+                      ["kind"] = "raw",
+                      ["media"] = "text/plain",
+                    },
                   },
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -177,6 +184,16 @@ local function make_config()
                 },
                 ["args"] = {},
                 ["select"] = {},
+                ["response"] = {
+                  ["alternatives"] = {
+                    {
+                      ["kind"] = "raw",
+                      ["media"] = "text/plain",
+                    },
+                  },
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
+                },
               },
             },
           },
@@ -212,6 +229,16 @@ local function make_config()
                 },
                 ["args"] = {},
                 ["select"] = {},
+                ["response"] = {
+                  ["alternatives"] = {
+                    {
+                      ["kind"] = "raw",
+                      ["media"] = "text/plain",
+                    },
+                  },
+                  ["kind"] = "raw",
+                  ["media"] = "text/html",
+                },
               },
             },
           },
@@ -269,10 +296,16 @@ local function make_config()
                     },
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "format",
+                ["select"] = {},
+                ["response"] = {
+                  ["alternatives"] = {
+                    {
+                      ["kind"] = "raw",
+                      ["media"] = "text/plain",
+                    },
                   },
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -331,10 +364,16 @@ local function make_config()
                     },
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "format",
+                ["select"] = {},
+                ["response"] = {
+                  ["alternatives"] = {
+                    {
+                      ["kind"] = "raw",
+                      ["media"] = "text/plain",
+                    },
                   },
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },
@@ -393,10 +432,16 @@ local function make_config()
                     },
                   },
                 },
-                ["select"] = {
-                  ["exist"] = {
-                    "format",
+                ["select"] = {},
+                ["response"] = {
+                  ["alternatives"] = {
+                    {
+                      ["kind"] = "raw",
+                      ["media"] = "text/plain",
+                    },
                   },
+                  ["kind"] = "json",
+                  ["media"] = "application/json",
                 },
               },
             },

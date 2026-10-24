@@ -9,7 +9,7 @@ import { createLiveTransport } from '../../live-runner'
 import { runLiveEntity } from '../../live-entity'
 
 
-import { RejectionReasonGeneratorSDK, BaseFeature, stdutil } from '../../..'
+import { RejectionReasonGeneratorSDK, BaseFeature, config, stdutil } from '../../..'
 
 import {
   envOverride,
@@ -41,6 +41,18 @@ describe('YesEntity', async () => {
   })
 
 
+  test('validate', async (t) => {
+    if (null == (config as any).feature?.validate) {
+      t.skip('feature not present in this SDK: validate')
+      return
+    }
+    const client = RejectionReasonGeneratorSDK.test(undefined, { feature: { validate: { active: true } } })
+    await assert.rejects(client.Yes().load({"format":1} as any),
+      (err: any) => 'validate_failed' === err.code)
+  })
+
+
+
   test('basic', async (t) => {
 
     const live = 'TRUE' === process.env.REJECTION_REASON_GENERATOR_TEST_LIVE
@@ -51,7 +63,7 @@ describe('YesEntity', async () => {
     
     const setup = basicSetup()
     if (setup.live) {
-      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"reason":{"a":true,"h":"Reason","n":"reason","r":false,"sh":"The rejection or acceptance reason","t":"`$STRING`","key$":"reason","index$":0},"type":{"a":true,"h":"Type","n":"type","r":false,"sh":"Type of response (yes or no)","t":"`$STRING`","key$":"type","index$":1}},"name":"yes","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /yes","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"text","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0}]},"k":"http","m":"GET","o":"/yes","q":{"exist":["format"]},"r":{},"s":[{"lit":"yes"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"yes","name__orig":"yes","Name":"Yes","name_":"yes","name-":"yes","NAME":"YES","index$":5}, {"active":true,"entity":"yes","key$":"BasicYesFlow","kind":"basic","name":"BasicYesFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"yes_ref01","srcdatavar":"yes_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-yes_ref01"}}],"index$":0}]}, 'Yes', {"GET /yes":{"protocol":"http","parameters":[{"name":"format","in":"query","description":"Response format (json or plain text)","required":false,"schema":{"type":"string","enum":["json"],"default":"text"},"index$":0}]}})
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"reason":{"a":true,"h":"Reason","n":"reason","r":false,"sh":"The rejection or acceptance reason","t":"`$STRING`","key$":"reason","index$":0},"type":{"a":true,"h":"Type","n":"type","r":false,"sh":"Type of response (yes or no)","t":"`$STRING`","key$":"type","index$":1}},"name":"yes","op":{"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /yes","source":"openapi3","version":2},"g":{"query":[{"a":true,"ex":"text","k":"query","n":"format","or":"format","r":false,"t":"`$STRING`","index$":0}]},"k":"http","m":"GET","o":"/yes","q":{},"r":{},"rs":{"alternatives":[{"kind":"raw","media":"text/plain"}],"kind":"json","media":"application/json"},"s":[{"lit":"yes"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0}],"key$":"load"}},"relations":{"ancestors":[]},"key$":"yes","name__orig":"yes","Name":"Yes","name_":"yes","name-":"yes","NAME":"YES","index$":5}, {"active":true,"entity":"yes","key$":"BasicYesFlow","kind":"basic","name":"BasicYesFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"yes_ref01","srcdatavar":"yes_ref01_data","suffix":"_dt0"},"m":{},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-yes_ref01"}}],"index$":0}]}, 'Yes', {"GET /yes":{"protocol":"http","parameters":[{"name":"format","in":"query","description":"Response format (json or plain text)","required":false,"schema":{"type":"string","enum":["json"],"default":"text"},"index$":0}]}}, { strict: LIVE_STRICT, t })
     }
     const client = setup.client
     const struct = setup.struct
@@ -72,6 +84,12 @@ describe('YesEntity', async () => {
 })
 
 
+
+// main.kit.test.live.strict is true (the default is true): a live
+// request that fails, or a live test missing an input it needs,
+// fails the test.
+// An account with no record for a test to read skips it either way.
+const LIVE_STRICT = true
 
 function basicSetup(extra?: any) {
   // TODO: fix test def options

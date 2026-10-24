@@ -46,10 +46,15 @@ main: kit: entity: non: {
           }
           m: "GET"
           o: "/no"
-          q: {
-            exist: [
-              "format"
+          rs: {
+            alternatives: [
+              {
+                kind: "raw"
+                media: "text/plain"
+              }
             ]
+            kind: "json"
+            media: "application/json"
           }
           s: [
             {

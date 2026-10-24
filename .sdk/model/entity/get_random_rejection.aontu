@@ -46,10 +46,15 @@ main: kit: entity: get_random_rejection: {
           }
           m: "GET"
           o: "/"
-          q: {
-            exist: [
-              "format"
+          rs: {
+            alternatives: [
+              {
+                kind: "raw"
+                media: "text/plain"
+              }
             ]
+            kind: "json"
+            media: "application/json"
           }
           t: {
             req: "`reqdata`"

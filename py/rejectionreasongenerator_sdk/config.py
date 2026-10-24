@@ -96,6 +96,7 @@ def make_config():
         },
         "optspec": {
           "clearTimer": "`$FUNCTION`",
+          "now": "`$FUNCTION`",
           "setTimer": "`$FUNCTION`",
         },
         "strict": False,
@@ -160,10 +161,16 @@ def make_config():
                     },
                   ],
                 },
-                "select": {
-                  "exist": [
-                    "format",
+                "select": {},
+                "response": {
+                  "alternatives": [
+                    {
+                      "kind": "raw",
+                      "media": "text/plain",
+                    },
                   ],
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
             ],
@@ -206,6 +213,16 @@ def make_config():
                 },
                 "args": {},
                 "select": {},
+                "response": {
+                  "alternatives": [
+                    {
+                      "kind": "raw",
+                      "media": "text/plain",
+                    },
+                  ],
+                  "kind": "json",
+                  "media": "application/json",
+                },
               },
             ],
           },
@@ -241,6 +258,16 @@ def make_config():
                 },
                 "args": {},
                 "select": {},
+                "response": {
+                  "alternatives": [
+                    {
+                      "kind": "raw",
+                      "media": "text/plain",
+                    },
+                  ],
+                  "kind": "raw",
+                  "media": "text/html",
+                },
               },
             ],
           },
@@ -298,10 +325,16 @@ def make_config():
                     },
                   ],
                 },
-                "select": {
-                  "exist": [
-                    "format",
+                "select": {},
+                "response": {
+                  "alternatives": [
+                    {
+                      "kind": "raw",
+                      "media": "text/plain",
+                    },
                   ],
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
             ],
@@ -360,10 +393,16 @@ def make_config():
                     },
                   ],
                 },
-                "select": {
-                  "exist": [
-                    "format",
+                "select": {},
+                "response": {
+                  "alternatives": [
+                    {
+                      "kind": "raw",
+                      "media": "text/plain",
+                    },
                   ],
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
             ],
@@ -422,10 +461,16 @@ def make_config():
                     },
                   ],
                 },
-                "select": {
-                  "exist": [
-                    "format",
+                "select": {},
+                "response": {
+                  "alternatives": [
+                    {
+                      "kind": "raw",
+                      "media": "text/plain",
+                    },
                   ],
+                  "kind": "json",
+                  "media": "application/json",
                 },
               },
             ],

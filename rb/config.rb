@@ -79,6 +79,7 @@ module RejectionReasonGeneratorConfig
           },
           "optspec" => {
             "clearTimer" => "`$FUNCTION`",
+            "now" => "`$FUNCTION`",
             "setTimer" => "`$FUNCTION`",
           },
           "strict" => false,
@@ -143,10 +144,16 @@ module RejectionReasonGeneratorConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "format",
+                  "select" => {},
+                  "response" => {
+                    "alternatives" => [
+                      {
+                        "kind" => "raw",
+                        "media" => "text/plain",
+                      },
                     ],
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -189,6 +196,16 @@ module RejectionReasonGeneratorConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "alternatives" => [
+                      {
+                        "kind" => "raw",
+                        "media" => "text/plain",
+                      },
+                    ],
+                    "kind" => "json",
+                    "media" => "application/json",
+                  },
                 },
               ],
             },
@@ -224,6 +241,16 @@ module RejectionReasonGeneratorConfig
                   },
                   "args" => {},
                   "select" => {},
+                  "response" => {
+                    "alternatives" => [
+                      {
+                        "kind" => "raw",
+                        "media" => "text/plain",
+                      },
+                    ],
+                    "kind" => "raw",
+                    "media" => "text/html",
+                  },
                 },
               ],
             },
@@ -281,10 +308,16 @@ module RejectionReasonGeneratorConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "format",
+                  "select" => {},
+                  "response" => {
+                    "alternatives" => [
+                      {
+                        "kind" => "raw",
+                        "media" => "text/plain",
+                      },
                     ],
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -343,10 +376,16 @@ module RejectionReasonGeneratorConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "format",
+                  "select" => {},
+                  "response" => {
+                    "alternatives" => [
+                      {
+                        "kind" => "raw",
+                        "media" => "text/plain",
+                      },
                     ],
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],
@@ -405,10 +444,16 @@ module RejectionReasonGeneratorConfig
                       },
                     ],
                   },
-                  "select" => {
-                    "exist" => [
-                      "format",
+                  "select" => {},
+                  "response" => {
+                    "alternatives" => [
+                      {
+                        "kind" => "raw",
+                        "media" => "text/plain",
+                      },
                     ],
+                    "kind" => "json",
+                    "media" => "application/json",
                   },
                 },
               ],

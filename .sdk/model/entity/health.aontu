@@ -26,6 +26,16 @@ main: kit: entity: health: {
           }
           m: "GET"
           o: "/health"
+          rs: {
+            alternatives: [
+              {
+                kind: "raw"
+                media: "text/plain"
+              }
+            ]
+            kind: "json"
+            media: "application/json"
+          }
           s: [
             {
               lit: "health"

@@ -16,11 +16,22 @@ const PLAN: any[] = [
     "path": "/",
     "args": [],
     "select": {
-      "format": "v1"
+      "format": "text"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "text/plain",
+      "application/json"
+    ],
     "query": [
       "format"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      }
     ],
     "auth": null,
     "status": 200,
@@ -39,7 +50,13 @@ const PLAN: any[] = [
     "args": [],
     "select": {},
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "text/plain",
+      "application/json"
+    ],
     "query": [],
+    "queryArgs": [],
     "auth": null,
     "status": 200,
     "sample": {
@@ -56,7 +73,13 @@ const PLAN: any[] = [
     "args": [],
     "select": {},
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "text/plain",
+      "text/html"
+    ],
     "query": [],
+    "queryArgs": [],
     "auth": null,
     "status": 200,
     "sample": null,
@@ -70,11 +93,22 @@ const PLAN: any[] = [
     "path": "/no",
     "args": [],
     "select": {
-      "format": "v1"
+      "format": "text"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "text/plain",
+      "application/json"
+    ],
     "query": [
       "format"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      }
     ],
     "auth": null,
     "status": 200,
@@ -92,11 +126,22 @@ const PLAN: any[] = [
     "path": "/random",
     "args": [],
     "select": {
-      "format": "v1"
+      "format": "text"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "text/plain",
+      "application/json"
+    ],
     "query": [
       "format"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      }
     ],
     "auth": null,
     "status": 200,
@@ -114,11 +159,22 @@ const PLAN: any[] = [
     "path": "/yes",
     "args": [],
     "select": {
-      "format": "v1"
+      "format": "text"
     },
     "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "text/plain",
+      "application/json"
+    ],
     "query": [
       "format"
+    ],
+    "queryArgs": [
+      {
+        "name": "format",
+        "wire": "format"
+      }
     ],
     "auth": null,
     "status": 200,

@@ -143,12 +143,18 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/",
-                  "q": {
-                    "exist": [
-                      "format"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "alternatives": [
+                      {
+                        "kind": "raw",
+                        "media": "text/plain"
+                      }
+                    ],
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [],
                   "t": {
                     "req": "`reqdata`",
@@ -195,6 +201,16 @@
                   "o": "/health",
                   "q": {},
                   "r": {},
+                  "rs": {
+                    "alternatives": [
+                      {
+                        "kind": "raw",
+                        "media": "text/plain"
+                      }
+                    ],
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "health"
@@ -237,6 +253,16 @@
                   "o": "/help",
                   "q": {},
                   "r": {},
+                  "rs": {
+                    "alternatives": [
+                      {
+                        "kind": "raw",
+                        "media": "text/plain"
+                      }
+                    ],
+                    "kind": "raw",
+                    "media": "text/html"
+                  },
                   "s": [
                     {
                       "lit": "help"
@@ -306,12 +332,18 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/no",
-                  "q": {
-                    "exist": [
-                      "format"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "alternatives": [
+                      {
+                        "kind": "raw",
+                        "media": "text/plain"
+                      }
+                    ],
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "no"
@@ -381,12 +413,18 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/random",
-                  "q": {
-                    "exist": [
-                      "format"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "alternatives": [
+                      {
+                        "kind": "raw",
+                        "media": "text/plain"
+                      }
+                    ],
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "random"
@@ -456,12 +494,18 @@
                   "k": "http",
                   "m": "GET",
                   "o": "/yes",
-                  "q": {
-                    "exist": [
-                      "format"
-                    ]
-                  },
+                  "q": {},
                   "r": {},
+                  "rs": {
+                    "alternatives": [
+                      {
+                        "kind": "raw",
+                        "media": "text/plain"
+                      }
+                    ],
+                    "kind": "json",
+                    "media": "application/json"
+                  },
                   "s": [
                     {
                       "lit": "yes"
@@ -802,6 +846,7 @@
             },
             "optspec": {
               "clearTimer": "`$FUNCTION`",
+              "now": "`$FUNCTION`",
               "setTimer": "`$FUNCTION`"
             },
             "strict": false
@@ -1094,7 +1139,7 @@
       "optspec": {
         "allow": {
           "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
-          "op": "create,update,load,list,remove,command,direct,graphql"
+          "op": "create,update,patch,load,list,remove,command,direct,graphql"
         },
         "apikey": "",
         "auth": {
@@ -1147,6 +1192,11 @@
         "top": {
           "active": true
         }
+      },
+      "publisher": {
+        "name": "",
+        "security": "",
+        "url": ""
       },
       "repo": {
         "host": "github.com",
@@ -1377,7 +1427,10 @@
             "version": "0.0.1"
           },
           "superseded": [],
-          "title": "Go MCP server"
+          "title": "Go MCP server",
+          "tool": {
+            "write": false
+          }
         },
         "lua": {
           "active": true,
@@ -1754,6 +1807,17 @@
           "base": "",
           "strict": true
         }
+      },
+      "text": {
+        "about_md": "",
+        "docs_url": "",
+        "entity_desc": {},
+        "homepage": "",
+        "meta_source": "",
+        "summary": "",
+        "tagline": "",
+        "title": "",
+        "website": ""
       }
     }
   },

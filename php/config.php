@@ -93,6 +93,7 @@ class RejectionReasonGeneratorConfig
           ],
           'optspec' => [
             'clearTimer' => '`$FUNCTION`',
+            'now' => '`$FUNCTION`',
             'setTimer' => '`$FUNCTION`',
           ],
           'strict' => false,
@@ -157,10 +158,16 @@ class RejectionReasonGeneratorConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'format',
+                  'select' => [],
+                  'response' => [
+                    'alternatives' => [
+                      [
+                        'kind' => 'raw',
+                        'media' => 'text/plain',
+                      ],
                     ],
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],
@@ -203,6 +210,16 @@ class RejectionReasonGeneratorConfig
                   ],
                   'args' => [],
                   'select' => [],
+                  'response' => [
+                    'alternatives' => [
+                      [
+                        'kind' => 'raw',
+                        'media' => 'text/plain',
+                      ],
+                    ],
+                    'kind' => 'json',
+                    'media' => 'application/json',
+                  ],
                 ],
               ],
             ],
@@ -238,6 +255,16 @@ class RejectionReasonGeneratorConfig
                   ],
                   'args' => [],
                   'select' => [],
+                  'response' => [
+                    'alternatives' => [
+                      [
+                        'kind' => 'raw',
+                        'media' => 'text/plain',
+                      ],
+                    ],
+                    'kind' => 'raw',
+                    'media' => 'text/html',
+                  ],
                 ],
               ],
             ],
@@ -295,10 +322,16 @@ class RejectionReasonGeneratorConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'format',
+                  'select' => [],
+                  'response' => [
+                    'alternatives' => [
+                      [
+                        'kind' => 'raw',
+                        'media' => 'text/plain',
+                      ],
                     ],
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],
@@ -357,10 +390,16 @@ class RejectionReasonGeneratorConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'format',
+                  'select' => [],
+                  'response' => [
+                    'alternatives' => [
+                      [
+                        'kind' => 'raw',
+                        'media' => 'text/plain',
+                      ],
                     ],
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],
@@ -419,10 +458,16 @@ class RejectionReasonGeneratorConfig
                       ],
                     ],
                   ],
-                  'select' => [
-                    'exist' => [
-                      'format',
+                  'select' => [],
+                  'response' => [
+                    'alternatives' => [
+                      [
+                        'kind' => 'raw',
+                        'media' => 'text/plain',
+                      ],
                     ],
+                    'kind' => 'json',
+                    'media' => 'application/json',
                   ],
                 ],
               ],
